@@ -3,9 +3,10 @@ const Post = require('../../models/post')
 const dataController = {
   // Index,
   index (req, res, next) {
-    // WE WANT TO FIND ALL POSTS FROM ACCOUNTS WE FOLLOW
+    // WE WANT TO FIND ALL POSTS FROM ACCOUNTS WE FOLLOW ====> We are currently checking the id of our followers and finding all posts created by all followers
     // NEED TO FIGURE OUT HERE THE PARAMS TO FIND
-    Post.find({user: following}, (err, foundPosts) => {
+    //Sort Posts by date
+    Post.find({blogId: {$in: following}}, (err, foundPosts) => {
       if (err) {
         res.status(400).send({
           msg: err.message
