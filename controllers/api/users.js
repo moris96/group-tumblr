@@ -1,4 +1,4 @@
-const User = require('../../models/user')
+const User = require('../../models/users')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 
@@ -20,6 +20,7 @@ const dataController = {
         res.locals.data.token = token
         next()
       } catch (e) {
+        console.log("error", e);
         res.status(400).json(e)
       }
     },
