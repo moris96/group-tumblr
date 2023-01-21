@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+
 import LoginForm from './components/LogInForm'
 import SignUpForm from './components/SignUpForm'
 
