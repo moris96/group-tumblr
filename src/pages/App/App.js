@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import AuthPage from "../AuthPage/AuthPage"
 import { Routes, Route } from "react-router-dom"
 import NavBar from "../../components/NavBar/NavBar"
+import PostsPage from "../PostsPage/PostsPage"
 
 function App() {
   
@@ -29,7 +30,9 @@ function App() {
         user ?
         <>
           <NavBar />
-          <Routes></Routes>
+          <Routes>
+            <Route path="/"  element={PostsPage} />
+          </Routes>
         </>
         :
         <AuthPage setUser={setUser}/>
