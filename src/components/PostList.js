@@ -1,6 +1,6 @@
 import Post from "./Post";
 
-export default function PostList({posts}){
+export default function PostList({ posts, user }){
     return(
         <div className="post-list">
             {posts.map((post)=>{
