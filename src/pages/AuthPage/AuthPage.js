@@ -1,7 +1,7 @@
 //Auth Page
 
-import SignUpForm from "../components/SignUpForm/SignUpForm"
-import LoginForm from "../components/LoginForm/LoginForms"
+import SignUpForm from "../../components/SignUpForm"
+import LoginForm from "../../components/LogInForm"
 
 export default function AuthPage(props){
     return(

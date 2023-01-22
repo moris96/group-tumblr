@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import AuthPage from "../AuthPage/AuthPage"
 import { Routes, Route } from "react-router-dom"
-import NavBar from "../../components/NavBar/NavBar"
+import NavBar from "../../components/NavBar"
 
 function App() {
   
