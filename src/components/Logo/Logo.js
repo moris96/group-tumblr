@@ -2,7 +2,7 @@
 export default function Logo () {
 
   const handleClick = () => {
-    href="home"
+    
   }
 
   return (
