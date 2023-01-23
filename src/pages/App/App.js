@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import AuthPage from "../AuthPage/AuthPage"
-import { Routes, Route } from "react-router-dom"
+//import { Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+
 import NavBar from "../../components/NavBar/NavBar"
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
   return (
     <main className="App">
       {
-        user ?
+        user?
         <>
           <NavBar />
           <Routes></Routes>
