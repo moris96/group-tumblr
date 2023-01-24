@@ -14,14 +14,13 @@ export default function PostList({user}) {
     }
     useEffect(()=>{
         getPosts()
-        console.log("Hello")
     },[])
 
   return (
     <div className="post-list">
       <h1>Post List</h1>
       {posts ? posts.map((post) => {
-        return <Post post={post} user={user} />;
+        return <Post key={post._id} post={post} user={user} />;
       }): "Nothing here"}
     </div>
   );
