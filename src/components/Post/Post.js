@@ -11,7 +11,7 @@ export default function Post({post, user}){
             <h3>{post.text}</h3>
             {post.imgLink ? <img src={post.imgLink}/> : ""}
             <button onClick={()=>setCreateComment(!createComment)}>Add Note</button>
-            {createComment? <NewComment />:""}
+            {createComment? <NewComment post={post}/>:""}
             <button>Share</button>
             <button>Like</button>
             {user == post.creator ? 
