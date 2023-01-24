@@ -4,6 +4,9 @@ const postSchema = new Schema ({
   typeOfPost: {
     type: String,
   },
+  title: {
+    type: String,
+  },
   blogId: {
     type: String,
   },
