@@ -4,11 +4,17 @@ const postSchema = new Schema ({
   typeOfPost: {
     type: String,
   },
+  title: {
+    type: String,
+  },
   blogId: {
     type: String,
   },
   text: {
     type: String,
+  },
+  imgLink: {
+    type: String
   },
   notes: [{type: Schema.Types.ObjectId, ref: 'Notes'}]
 },{

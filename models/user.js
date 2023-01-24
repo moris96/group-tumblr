@@ -39,9 +39,7 @@ const userSchema = new Schema ({
     type: Schema.Types.ObjectId,
     ref: 'Posts'
   }],
-  following:{
-    type: String,
-  }
+  following:[{type: String}]
 }, {
     timestamps: true,
     toJSON: {

@@ -4,12 +4,12 @@ import PostOptions from "../../components/PostOptions/PostOptions";
 import SuggestedFollows from "../../components/SuggestedFollows/SuggestedFollows";
 import styles from "../HomePage/HomePage.module.scss"
 
-export default function HomePage(){
+export default function HomePage({user}){
     return (
     <section className={styles.homePageContainer}>
       <div className={styles.rightSide}>
 				<PostOptions />
-				<PostList />
+				<PostList user={user}/>
 			</div>
 			<div className={styles.leftSide}>
 				<SuggestedFollows />

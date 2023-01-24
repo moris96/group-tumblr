@@ -1,4 +1,26 @@
-:root {
-  background-color: black;
-  color: white;
+/* navbar */
+.navBarContainer {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.logo-button {
+    width: 100px;
+}
+.home-icon {
+    width: 100px;
+}
+.explore-icon {
+    width: 100px;
+}
+.mail-icon {
+    width: 100px;
+}
+.chat-icon {
+    width: 100px;
+}
+.account-icon {
+    width: 100px;
+}
+.post-icon {
+    width: 100px;
 }
