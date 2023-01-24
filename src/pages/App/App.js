@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 import AuthPage from "../AuthPage/AuthPage"
 import { Routes, Route } from "react-router-dom"
-import NavBar from "../../components/NavBar"
+// import NavBar from "../../components/NavBar"
+import NavBar from "../../components/NavBar/NavBar"
 import HomePage from "../HomePage/HomePage"
 import { getUser } from "../../utilities/users-service"
 
