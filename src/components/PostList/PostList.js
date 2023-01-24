@@ -1,19 +1,28 @@
-// import Post from "./Post";
+import Post from '../Post/Post'
+import { useState, useEffect } from 'react'
 
-export default function PostList({ posts, user }){
-    return(
-        <div className="post-list">
-					<h1>Post List</h1>
-        </div>
-    )
+export default function PostList({user}) {
+    const [posts, setPosts] = useState(null)
+    const getPosts = async () => {
+        try {
+            const response = await fetch(`/api/posts`)
+            const data = await response.json()
+            setPosts(data)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    useEffect(()=>{
+        getPosts()
+        console.log("Hello")
+    },[])
+
+  return (
+    <div className="post-list">
+      <h1>Post List</h1>
+      {posts ? posts.map((post) => {
+        return <Post post={post} user={user} />;
+      }): "Nothing here"}
+    </div>
+  );
 }
-
-/*
-{posts.map((post)=>{
-    return(
-        <Post 
-        post={post}
-        user={user}/>
-    )
-})}
-*/
