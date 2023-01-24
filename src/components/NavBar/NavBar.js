@@ -1,5 +1,5 @@
-// import Logo from "./Logo/Logo"
 import Logo from "../Logo/Logo"
+import SearchBar from "../SearchBar/SearchBar"
 // import styles from "../components/NavBar/NavBar.module.scss"
 
 
@@ -8,10 +8,7 @@ export default function NavBar(props){
     <div className="navBarContainer">
 
       <Logo />
-      <form className="search">
-        <input type="text" placeholder="Search Tumblr" />
-        <button type="submit" >Search</button>
-      </form>
+      <SearchBar />
       <button className="home-button"><img className="home-icon" src="https://static.thenounproject.com/png/77002-200.png" alt="icon" /></button>&nbsp;
       <button className="explore-button"><img className="explore-icon" src="https://t3.ftcdn.net/jpg/03/16/35/26/360_F_316352607_hAJzMbFFXKW3EsB9vL51KuKh50MwekEC.jpg" alt="explore" /></button>&nbsp;
       <button className="mail-button"><img className="mail-icon" src="https://img.freepik.com/free-icon/envelope_318-408141.jpg?w=2000" alt="explore" /></button>&nbsp;
