@@ -1,7 +1,7 @@
 //Auth Page
 
-import SignUpForm from "../../components/SignUpForm"
-import LoginForm from "../../components/LogInForm"
+import SignUpForm from "../../components/SignUpForm/SignUpForm"
+import LoginForm from "../../components/LogInForm/LogInForm"
 import { useEffect, useState } from "react"
 
 export default function AuthPage(props) {
