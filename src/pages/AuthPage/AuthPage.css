@@ -1,0 +1,13 @@
+
+.hide {
+  display: none;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+}
+
+.show {
+  display: block;
+  overflow: visible;
+  height: auto;
+  transition: all .5s ease-in-out;
+}
