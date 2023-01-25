@@ -1,5 +1,5 @@
 import "./AuthPage.css"
-import SignUpPage from "./SignUpPage";
+import SignUpPage from "./SignupPage";
 import LoginPage from "./LoginPage"
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
