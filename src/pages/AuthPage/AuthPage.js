@@ -1,45 +1,25 @@
-//Auth Page
+import "./AuthPage.css"
+import SignUpPage from "./SignUpPage"
+import LoginPage from "./LoginPage"
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+// import { Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
-import SignUpForm from "../../components/SignUpForm/SignUpForm"
-import LoginForm from "../../components/LogInForm/LogInForm"
-import { useEffect, useState } from "react"
-
-export default function AuthPage(props) {
-    const [show, setShow] = useState(null)
-
-    const components = [
-        {
-            component: <LoginForm setUser={props.setUser} />
-        },
-        {
-            component: <SignUpForm setUser={props.setUser}/>
-        }
-    ]
-
-    const handleClick = (i) => {
-        if (show === 0){
-            return setShow(null)
-        }
-        setShow(1)
-        if (show === 1){
-            return setShow(null)
-        }
-        setShow(0)
-    }
-
-    useEffect (() => {
-        setShow(0)
-    }, [])
-
+export default function AuthPage(props){
     return(
-        <main>
-            <button onClick={handleClick}>
-                Click for Sign Up or Login
-            </button>
-            <section className={show === 0 ? 'show' : 'hide'}>{components[0].component}</section>
-            <section className={show === 1 ? 'show' : 'hide'}>{components[1].component}</section>
-            {/* <SignUpForm setUser={props.setUser}/>
-            <LoginForm setUser={props.setUser} /> */}
+        <main id="Auth">
+            <nav>
+            <Link to="/">Home</Link>
+            <Link to="/login">Log In</Link>
+            <Link to="/signup">Sign Up</Link>
+            </nav>
+            <Routes>
+                <Route path="/" element={<></>} />
+                <Route path="/login" element={<LoginPage setUser={props.setUser} />} />
+                <Route path="/signup" element={<SignUpPage setUser={props.setUser} />} />
+            </Routes>
+            {/* <LoginPage setUser={props.setUser}/> */}
         </main>
     )
-};
+}
