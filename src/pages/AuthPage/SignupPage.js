@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import SignUpForm from "../../components/SignUpForm"
+import SignUpForm from "../../components/SignUpForm/SignUpForm"
 // import { Routes, Route } from "react-router-dom"
 
-export default function SignupPage(props){
+export default function SignUpPage(props){
     return(
         <main>
             <h1>Sign Up</h1>

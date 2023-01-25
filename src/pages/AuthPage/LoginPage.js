@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import LoginForm from '../../components/LogInForm';
+import LoginForm from '../../components/LogInForm/LogInForm'
 // import { Routes, Route } from "react-router-dom"
 
 export default function LoginPage(props){
