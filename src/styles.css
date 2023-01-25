@@ -60,3 +60,7 @@
     position: relative;
     left: 30%;
 }
+
+.nav-button {
+    cursor: pointer;
+}
