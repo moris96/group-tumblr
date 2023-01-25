@@ -16,7 +16,7 @@ const postSchema = new Schema ({
   imgLink: {
     type: String
   },
-  notes: [{type: Schema.Types.ObjectId, ref: 'Notes'}]
+  notes: [{type: Schema.Types.ObjectId, ref: 'Note'}]
 },{
     timestamps: true,
   

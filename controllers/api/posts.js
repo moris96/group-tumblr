@@ -7,7 +7,7 @@ const dataController = {
     // NEED TO FIGURE OUT HERE THE PARAMS TO FIND
     //Sort Posts by date
     // Post.find({blogId: {$in: following}}, (err, foundPosts) => {
-    Post.find({}, (err, foundPosts) => {
+    Post.find({}).populate('notes').exec((err, foundPosts) => {
       if (err) {
         res.status(400).send({
           msg: err.message
