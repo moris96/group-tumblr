@@ -4,7 +4,7 @@ export default function Notes({post}){
         <ul>
             {post.notes.map((note)=>{
                return(
-                <li>{note}</li>
+                <li key={note._id}>{note.text}</li>
                ) 
             })}
         </ul>
