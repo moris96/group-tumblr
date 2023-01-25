@@ -1,9 +1,13 @@
 import { useState } from "react"
 import NewComment from "../NewComment/NewComment"
+import Notes from "../Notes/Notes"
 
 export default function Post({post, user}){
-    const [showComments, setShowComment] = useState(null)
+    const [showComments, setShowComment] = useState(false)
     const [createComment, setCreateComment] = useState(false)
+    const displayPostComments = () => {
+        setShowComment(!showComments)
+    }
 
     return(
         <div className="post">
@@ -11,9 +15,17 @@ export default function Post({post, user}){
             <h3>{post.text}</h3>
             {post.imgLink ? <img src={post.imgLink}/> : ""}
             <button onClick={()=>setCreateComment(!createComment)}>Add Note</button>
-            {createComment? <NewComment />:""}
+            {createComment? 
+            <NewComment post={post} 
+            createComment={createComment}
+            setCreateComment={setCreateComment}/>:""}
             <button>Share</button>
             <button>Like</button>
+            {post.notes ? 
+            <h4 onClick={displayPostComments}>{post.notes.length} notes</h4>
+            :""}
+            {showComments? 
+            <Notes post={post}/>:""}
             {user == post.creator ? 
             <>
             <button>Delete</button>
