@@ -1,5 +1,5 @@
 import "./AuthPage.css"
-import SignUpPage from "./SignUpPage";
+import SingupPage from "./SignupPage";
 import LoginPage from "./LoginPage"
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -17,7 +17,7 @@ export default function AuthPage(props){
             <Routes>
                 <Route path="/" element={<></>} />
                 <Route path="/login" element={<LoginPage setUser={props.setUser} />} />
-                <Route path="/signup" element={<SignUpPage setUser={props.setUser} />} />
+                <Route path="/signup" element={<SingupPage setUser={props.setUser} />} />
             </Routes>
             {/* <LoginPage setUser={props.setUser}/> */}
         </main>
