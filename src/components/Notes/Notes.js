@@ -1,10 +1,21 @@
-export default function Notes({post}){
+import userEvent from "@testing-library/user-event"
+
+export default function Notes({post, user}){
+    const deleteComment = async (id) => {
+        const response = await fetch(`/api/comments/${id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    }
 
     return(
         <ul>
             {post.notes.map((note)=>{
                return(
-                <li key={note._id}>{note.text}</li>
+                <li key={note._id}>{note.text}
+                {note.createdBy === user._id ? <button onClick={()=>deleteComment(note._id)}>Delete Comment</button>: ""}</li>
                ) 
             })}
         </ul>

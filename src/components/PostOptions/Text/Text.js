@@ -27,6 +27,8 @@ export default function Text(props){
                 blogId: props.user._id,
                 text: ""
             })
+            props.close()
+            props.close1()
         } catch (error) {
             console.error(error)
         }
