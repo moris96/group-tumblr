@@ -8,6 +8,7 @@ export default function PostList({user}) {
             const response = await fetch(`/api/posts`)
             const data = await response.json()
             setPosts(data)
+            console.log(data)
         } catch (error) {
             console.error(error)
         }

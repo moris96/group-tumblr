@@ -33,7 +33,7 @@ function App() {
       {
         user ?
         <>
-          <NavBar />
+          <NavBar user={user}/>
           <Routes>
             <Route path="/" element={<HomePage user={user}/>} />
           </Routes>
