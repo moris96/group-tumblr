@@ -18,14 +18,16 @@ export default function Post({post, user}){
             {createComment? 
             <NewComment post={post} 
             createComment={createComment}
-            setCreateComment={setCreateComment}/>:""}
+            setCreateComment={setCreateComment}
+            user={user}/>:""}
             <button>Share</button>
             <button>Like</button>
             {post.notes ? 
             <h4 onClick={displayPostComments}>{post.notes.length} notes</h4>
             :""}
             {showComments? 
-            <Notes post={post}/>:""}
+            <Notes post={post}
+            user={user}/>:""}
             {user == post.creator ? 
             <>
             <button>Delete</button>
