@@ -18,15 +18,39 @@ export default function PostOptions (props) {
             <a className="close" onClick={close}>
               &times;
             </a>
-          </div>
+          </div>  
         )}
       </Popup>
-      <p>PHOTOS</p>&nbsp;
-      <p>QUOTES</p>&nbsp;
-      <p>LINKS</p>&nbsp;
-      <p>CHAT</p>&nbsp;
-      <p>AUDIO</p>&nbsp;
-      <p>VIDEO</p>&nbsp;
+      <div className={styles.circle}>
+      <div className={styles.wordContainer}>
+      <p className={styles.photos}>PHOTOS</p>&nbsp;
+      </div>
+      </div>
+      <div className={styles.circle2}>
+      <div className={styles.wordContainer}>
+      <p className={styles.photos}>QUOTES</p>&nbsp;
+      </div>
+      </div>
+      <div className={styles.circle3}>
+      <div className={styles.wordContainer}>
+      <p className={styles.photos}>LINKS</p>&nbsp;
+      </div>
+      </div>
+      <div className={styles.circle4}>
+      <div className={styles.wordContainer}>
+      <p className={styles.photos}>CHAT</p>&nbsp;
+      </div>
+      </div>
+      <div className={styles.circle5}>
+      <div className={styles.wordContainer}>
+      <p className={styles.photos}>AUDIO</p>&nbsp;
+      </div>
+      </div>
+      <div className={styles.circle6}>
+      <div className={styles.wordContainer}>
+      <p className={styles.photos}>VIDEO</p>&nbsp;
+      </div>
+      </div>
     </section>  
   )
 }
