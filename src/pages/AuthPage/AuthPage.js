@@ -1,25 +1,32 @@
 import "./AuthPage.css"
-import SingupPage from "./SignupPage";
+import SignUpPage from "./SignupPage"
 import LoginPage from "./LoginPage"
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 // import { Routes, Route } from "react-router-dom"
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import Popup from "reactjs-popup";
 
 export default function AuthPage(props){
     return(
         <main id="Auth">
             <nav>
             <Link to="/">Home</Link>
-            <Link to="/login">Log In</Link>
-            <Link to="/signup">Sign Up</Link>
+            <Popup trigger={<button className="logIn">Log In</button>}
+            modal
+            nested
+            >
+            {<LoginPage setUser={props.setUser} />}
+            </Popup>
+            <Popup trigger={<button className="SignUp">Sign Up</button>}
+            modal
+            nested
+            >{<SignUpPage setUser={props.setUser} />}</Popup>
             </nav>
-            <Routes>
-                <Route path="/" element={<></>} />
-                <Route path="/login" element={<LoginPage setUser={props.setUser} />} />
-                <Route path="/signup" element={<SingupPage setUser={props.setUser} />} />
-            </Routes>
-            {/* <LoginPage setUser={props.setUser}/> */}
+            <section>
+                <body>
+                    <h1>HELLO</h1>
+                </body>
+            </section>
         </main>
     )
 }

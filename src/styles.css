@@ -61,6 +61,10 @@
     left: 30%;
 }
 
+.nav-button {
+    cursor: pointer;
+}
+
 .search-bar {
     /* background-color: gray; */
     /* color: white; */
