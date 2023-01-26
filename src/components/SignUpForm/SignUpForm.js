@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { signUp } from '../../utilities/users-service'
+import styles from "../SignUpForm/SignUpForm.module.scss"
 
 
 export default class SignUpForm extends Component {
@@ -44,13 +45,13 @@ export default class SignUpForm extends Component {
                 <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} /><br/>
                 <label>Last Name: </label> 
                 <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} /><br/>
-                <label>Email: </label>
+                <label>Email: <span className={styles.required}>*</span></label>
                 <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required /><br/>
-                <label>Username: </label>
+                <label>Username: <span className={styles.required}>*</span></label>
                 <input type="text" name="username" value={this.state.username} onChange={this.handleChange} required /><br/>
                 <label>Profile Photo: </label>
                 <input type="text" name="profilePhoto" value={this.state.profilePhoto} onChange={this.handleChange} /><br/>
-                <label>Password: </label>
+                <label>Password: <span className={styles.required}>*</span></label>
                 <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required /><br/>
                 <label>Confirm: </label>
                 <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />

@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 // import { Routes, Route } from "react-router-dom"
 import Popup from "reactjs-popup";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import LoginForm from "../../components/LogInForm/LogInForm";
-import SignUpForm from "../../components/SignUpForm/SignUpForm";
 
 export default function AuthPage(props){
     return(
@@ -25,12 +22,6 @@ export default function AuthPage(props){
             nested
             >{<SignUpPage setUser={props.setUser} />}</Popup>
             </nav>
-            {/* <Routes>
-                <Route path="/" element={<></>} />
-                <Route path="/login" element={<LoginPage setUser={props.setUser} />} />
-                <Route path="/signup" element={<SignUpPage setUser={props.setUser} />} />
-            </Routes> */}
-            {/* <LoginPage setUser={props.setUser}/> */}
             <section>
                 <body>
                     <h1>HELLO</h1>
