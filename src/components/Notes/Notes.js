@@ -1,6 +1,6 @@
 import userEvent from "@testing-library/user-event"
 
-export default function Notes({post, user}){
+export default function Notes({post, user, newPostElement, setNewPostElement}){
     const deleteComment = async (id) => {
         const response = await fetch(`/api/comments/${id}`, {
             method: "DELETE",
@@ -8,6 +8,7 @@ export default function Notes({post, user}){
                 'Content-Type': 'application/json'
             }
         })
+        setNewPostElement(!newPostElement)
     }
 
     return(

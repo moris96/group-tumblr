@@ -14,7 +14,11 @@ export default function PostOptions (props) {
       <Popup trigger={<p>TEXT</p>} modal>
         {close => (
           <div>
-            <Text close1={props.close1} close={close} user={props.user}/>
+            <Text close1={props.close1}
+            close={close}
+            user={props.user}
+            newPostElement={props.newPostElement}
+            setNewPostElement={props.setNewPostElement} />
             <a className="close" onClick={close}>
               &times;
             </a>
