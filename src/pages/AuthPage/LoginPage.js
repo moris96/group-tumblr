@@ -8,7 +8,7 @@ export default function LoginPage(props){
             <h1>Sign in</h1>
             <LoginForm setUser={props.setUser}></LoginForm>
             Sign in with Apple<br/>
-            Sign in with Goolge
+            Sign in with Google
         </main>
     )
 }

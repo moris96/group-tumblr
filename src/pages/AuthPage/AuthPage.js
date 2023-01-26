@@ -18,18 +18,18 @@ export default function AuthPage(props){
             modal
             nested
             >
-            {<LoginForm />}
+            {<LoginPage setUser={props.setUser} />}
             </Popup>
             <Popup trigger={<button className="SignUp">Sign Up</button>}
             modal
             nested
-            >{<SignUpForm />}</Popup>
+            >{<SignUpPage setUser={props.setUser} />}</Popup>
             </nav>
-            <Routes>
+            {/* <Routes>
                 <Route path="/" element={<></>} />
                 <Route path="/login" element={<LoginPage setUser={props.setUser} />} />
                 <Route path="/signup" element={<SignUpPage setUser={props.setUser} />} />
-            </Routes>
+            </Routes> */}
             {/* <LoginPage setUser={props.setUser}/> */}
             <section>
                 <body>
