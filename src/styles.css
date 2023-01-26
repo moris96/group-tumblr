@@ -1,3 +1,4 @@
+@import url('https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css');
 /* navbar */
 .navBarContainer {
     display: flex;
@@ -22,5 +23,8 @@
     width: 100px;
 }
 .post-icon {
+    width: 100px;
+}
+.nav-icon {
     width: 100px;
 }

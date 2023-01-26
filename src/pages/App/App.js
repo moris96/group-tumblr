@@ -3,6 +3,7 @@ import AuthPage from "../AuthPage/AuthPage"
 import { Routes, Route } from "react-router-dom"
 // import NavBar from "../../components/NavBar"
 import NavBar from "../../components/NavBar/NavBar"
+import Footer from "../../components/Footer/Footer"
 import HomePage from "../HomePage/HomePage"
 import { getUser } from "../../utilities/users-service"
 
@@ -33,13 +34,18 @@ function App() {
       {
         user ?
         <>
-          <NavBar />
+          <NavBar user={user}></NavBar>
           <Routes>
             <Route path="/" element={<HomePage user={user}/>} />
           </Routes>
+          <Footer></Footer>
         </>
         :
-        <AuthPage setUser={setUser}/>
+        <>
+          <NavBar></NavBar>
+          <AuthPage setUser={setUser}/>
+          <Footer></Footer>
+        </>
       }
     </main>
   );
