@@ -6,6 +6,7 @@ import SearchBar from "../SearchBar/SearchBar"
 import 'reactjs-popup/dist/index.css';
 import Account from "../Account/Account";
 import HomePage from "../../pages/HomePage/HomePage"
+import PostOptions from "../PostOptions/PostOptions"
 // import styles from "../components/NavBar/NavBar.module.scss"
 
 
@@ -27,7 +28,7 @@ export default function NavBar(props){
       <button className="mail-button"><img className="mail-icon" src={process.env.PUBLIC_URL+"/iconsImg/5.png"} alt="explore" /></button>&nbsp;
       <button className="chat-button"><img className="chat-icon" src={process.env.PUBLIC_URL+"/iconsImg/4.png"} alt="chat" /></button>&nbsp;
       <Popup trigger={<button className="account-button"><img className="account-icon" src={process.env.PUBLIC_URL+"/iconsImg/2.png"} alt="account" /></button>} >{<Account />}</Popup>
-      <button className="post-button"><img className="post-icon" src={process.env.PUBLIC_URL+"/iconsImg/1.png"} alt="post" /></button>&nbsp;
+      <Popup trigger={<button className="post-button"><img className="post-icon" src={process.env.PUBLIC_URL+"/iconsImg/1.png"} alt="post" /></button>} modal nested><PostOptions user={props.user}/></Popup>
     </div>
     )
 }
