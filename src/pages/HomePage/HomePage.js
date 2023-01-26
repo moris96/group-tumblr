@@ -8,7 +8,7 @@ export default function HomePage({user}){
     return (
     <section className={styles.homePageContainer}>
       <div className={styles.rightSide}>
-				<PostOptions />
+				{/* <PostOptions /> */}
 				<PostList user={user}/>
 			</div>
 			<div className={styles.leftSide}>
