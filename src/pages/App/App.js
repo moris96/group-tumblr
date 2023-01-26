@@ -10,7 +10,7 @@ function App() {
   
   const [state, setState] = useState(null)
   const [user, setUser] = useState(getUser())
-
+  const [newPostElement, setNewPostElement] = useState(true)
   // const [user, setUser] = useState(getUser())
 
   const fetchState = async () => {
@@ -33,9 +33,9 @@ function App() {
       {
         user ?
         <>
-          <NavBar user={user}/>
+          <NavBar user={user} newPostElement={newPostElement} setNewPostElement={setNewPostElement} />
           <Routes>
-            <Route path="/" element={<HomePage user={user}/>} />
+            <Route path="/" element={<HomePage newPostElement={newPostElement} setNewPostElement={setNewPostElement} user={user}/>} />
           </Routes>
         </>
         :

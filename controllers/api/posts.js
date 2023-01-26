@@ -13,6 +13,7 @@ const dataController = {
           msg: err.message
         })
       } else {
+        foundPosts.sort((a, b) => b.createdAt - a.createdAt)
         res.locals.data.posts = foundPosts
         next()
       }

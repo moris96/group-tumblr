@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function NewComment({post, createComment, setCreateComment, user}){
+export default function NewComment({post, createComment, setCreateComment, user, setNewPostElement, newPostElement}){
     const [newComment, setNewComment] = useState({
         postId: post._id,
         text: "",
@@ -35,6 +35,7 @@ export default function NewComment({post, createComment, setCreateComment, user}
                 createdBy: user._id
             })
             setCreateComment(!createComment)
+            setNewPostElement(!newPostElement)
         } catch (error) {
             console.error(error)
         }
