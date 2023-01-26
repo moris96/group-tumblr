@@ -12,10 +12,14 @@ export default function PostOptions (props) {
   return (
     <section className={styles.postOptionsContainer}>
       <Popup trigger={<p>TEXT</p>} modal nested>
-        {<>
-        <Text user={props.user}/>
-        <button onClick={()=>{close()}}></button>
-        </>}
+        {close => (
+          <div>
+            <Text user={props.user}/>
+            <a className="close" onClick={close}>
+              &times;
+            </a>
+          </div>
+        )}
       </Popup>
       <p>PHOTOS</p>&nbsp;
       <p>QUOTES</p>&nbsp;

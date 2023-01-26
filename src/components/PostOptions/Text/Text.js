@@ -12,7 +12,7 @@ export default function Text(props){
         setNewPost({...newPost, [evt.target.name]: evt.target.value})
     }
 
-    const newpost = async () => {
+    const postNow = async () => {
         try {
             const response = await fetch(`/api/posts`, {
                 method: "POST",
@@ -20,6 +20,12 @@ export default function Text(props){
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({...newPost})
+            })
+            setNewPost({
+                typeOfPost: "text",
+                title: "",
+                blogId: props.user._id,
+                text: ""
             })
         } catch (error) {
             console.error(error)
@@ -29,7 +35,7 @@ export default function Text(props){
         <>
             <h4>Post Title</h4><input name="title" value={newPost.title} onChange={handleChange}></input>
             <h4>Text</h4><input name="text" value={newPost.text} onChange={handleChange}></input>
-            <button onClick={props.closeModal}>Close Modal</button>
+            <button onClick={postNow}>Post now</button>
         </>
     )
 }
