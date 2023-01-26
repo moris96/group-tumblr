@@ -1,78 +1,109 @@
+body {
+    background-color: #041c34;
+}
+
 /* navbar */
 .navBarContainer {
     display: flex;
     flex-wrap: nowrap;
-    background-color: black;
+    background-color: #041c34;
     border-bottom: 5px solid red;
 }
 .logo-button {
     width: 100px;
+    background-color: #041c34;
 }
 .home-icon {
-    width: 100px;
+    width: 50px;
+    height: 40px;
 }
 .explore-icon {
-    width: 100px;
+    width: 50px;
+    height: 40px;
 }
 .mail-icon {
-    width: 100px;
+    width: 50px;
+    height: 40px;
 }
 .chat-icon {
-    width: 100px;
+    width: 50px;
+    height: 40px;
 }
 .account-icon {
-    width: 100px;
+    width: 50px;
+    height: 40px;
 }
 .post-icon {
-    width: 100px;
+    width: 45px;
+    height: 35px;
 }
 
 .logo {
     border-radius: 2rem;
 }
 .home-button {
-    border-radius: 2rem;
+    border: none;
     position: relative;
-    left: 567px;
+    left: 1030px;
+    width: 45px;
+    height: 35px;
+    background-color: #041c34;
 }
 .explore-button {
-    border-radius: 2rem;
+    border: none;
     position: relative;
-    left: 30%;
+    left: 55%;
+    width: 45px;
+    height: 35px;
+    background-color: #041c34;
 }
 .mail-button {
-    border-radius: 2rem;
+    border: none;
     position: relative;
-    left: 30%;
+    left: 55%;
+    width: 45px;
+    height: 35px;
+    background-color: #041c34;
 }
 .chat-button {
-    border-radius: 2rem;
+    border: none;
     position: relative;
-    left: 30%;
+    left: 55%;
+    width: 45px;
+    height: 35px;
+    background-color: #041c34;
 }
 .account-button {
-    border-radius: 2rem;
+    /* border-radius: 2rem; */
+    border: none;
     position: relative;
-    left: 30%;
+    left: 55%;
+    width: 45px;
+    height: 35px;
+    background-color: #041c34;
 }
 .post-button {
-    border-radius: 2rem;
+    /* border-radius: 2rem; */
+    border: none;
     position: relative;
-    left: 30%;
+    left: 55%;
+    width: 45px;
+    height: 35px;
+    background-color: #04bcfc;
 }
 
 .search-bar {
-    /* background-color: gray; */
+    background-color: #758494;
     /* color: white; */
     position: relative;
-    top: 50%;
+    top: 30%;
     left: 5%;
-    height: 20px;
-    width: 200px;
-    border-radius: .5rem;
+    height: 30px;
+    width: 300px;
+    border-radius: .2rem;
 }
 .search-submit {
     position: relative;
-    top: 50%;
+    top: 30%;
     left: 5%;
 }
