@@ -22,34 +22,34 @@ export default function PostOptions (props) {
         )}
       </Popup>
       <div className={styles.circle}>
-      <div className={styles.wordContainer}>
-      <p className={styles.photos}>PHOTOS</p>&nbsp;
-      </div>
+        <div className={styles.wordContainer}>
+          <p className={styles.photos}>PHOTOS</p>&nbsp;
+        </div>
       </div>
       <div className={styles.circle2}>
-      <div className={styles.wordContainer}>
-      <p className={styles.photos}>QUOTES</p>&nbsp;
-      </div>
+        <div className={styles.wordContainer}>
+          <p className={styles.photos}>QUOTES</p>&nbsp;
+        </div>
       </div>
       <div className={styles.circle3}>
-      <div className={styles.wordContainer}>
-      <p className={styles.photos}>LINKS</p>&nbsp;
-      </div>
+        <div className={styles.wordContainer}>
+          <p className={styles.photos}>LINKS</p>&nbsp;
+        </div>
       </div>
       <div className={styles.circle4}>
-      <div className={styles.wordContainer}>
-      <p className={styles.photos}>CHAT</p>&nbsp;
-      </div>
+        <div className={styles.wordContainer}>
+          <p className={styles.photos}>CHAT</p>&nbsp;
+        </div>
       </div>
       <div className={styles.circle5}>
-      <div className={styles.wordContainer}>
-      <p className={styles.photos}>AUDIO</p>&nbsp;
-      </div>
+        <div className={styles.wordContainer}>
+          <p className={styles.photos}>AUDIO</p>&nbsp;
+        </div>
       </div>
       <div className={styles.circle6}>
-      <div className={styles.wordContainer}>
-      <p className={styles.photos}>VIDEO</p>&nbsp;
-      </div>
+        <div className={styles.wordContainer}>
+          <p className={styles.photos}>VIDEO</p>&nbsp;
+        </div>
       </div>
     </section>  
   )
