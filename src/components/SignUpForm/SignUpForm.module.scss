@@ -1,3 +1,28 @@
+
+.signUpFormContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.signUpSection{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+label {
+  grid-column: 1/2;
+}
+
+input {
+  grid-column: 2/3;
+}
+
+.btnSection {
+  display: flex;
+  justify-content: center;
+}
+
 .required {
   color: red;
 }
+

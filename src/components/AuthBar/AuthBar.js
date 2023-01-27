@@ -1,9 +1,8 @@
 import Popup from "reactjs-popup";
-import SignUpPage from "../../pages/AuthPage/SignupPage"
-import LoginPage from "../../pages/AuthPage/LoginPage"
+import SignUpPage from "../SignupPage/SignupPage"
+import LoginPage from "../LoginPage/LoginPage"
 import styles from "../AuthBar/AuthBar.module.scss"
 import SearchBar from "../../components/SearchBar/SearchBar";
-import { Link } from 'react-router-dom';
 import Logo from "../Logo/Logo";
 
 export default function AuthBar (props) {
@@ -15,6 +14,7 @@ export default function AuthBar (props) {
     </section>
     <section className={styles.authBtns}>
       <Popup trigger={<button className={styles.logIn}>Log In</button>}
+
       modal
       nested
       >
