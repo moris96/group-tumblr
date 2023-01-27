@@ -27,6 +27,7 @@ export default function Text(props){
                 blogId: props.user._id,
                 text: ""
             })
+            props.setNewPostElement(!props.newPostElement)
             props.close()
             props.close1()
         } catch (error) {

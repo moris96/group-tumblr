@@ -2,7 +2,7 @@ import { useState } from "react"
 import NewComment from "../NewComment/NewComment"
 import Notes from "../Notes/Notes"
 
-export default function Post({post, user}){
+export default function Post({post, user, newPostElement, setNewPostElement}){
     const [showComments, setShowComment] = useState(false)
     const [createComment, setCreateComment] = useState(false)
     const displayPostComments = () => {
@@ -19,7 +19,9 @@ export default function Post({post, user}){
             <NewComment post={post} 
             createComment={createComment}
             setCreateComment={setCreateComment}
-            user={user}/>:""}
+            user={user}
+            newPostElement={newPostElement}
+            setNewPostElement={setNewPostElement}/>:""}
             <button>Share</button>
             <button>Like</button>
             {post.notes ? 
@@ -27,7 +29,9 @@ export default function Post({post, user}){
             :""}
             {showComments? 
             <Notes post={post}
-            user={user}/>:""}
+            user={user}
+            newPostElement={newPostElement}
+            setNewPostElement={setNewPostElement}/>:""}
             {user == post.creator ? 
             <>
             <button>Delete</button>
