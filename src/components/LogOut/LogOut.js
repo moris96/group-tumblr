@@ -3,7 +3,6 @@ import { logOut } from "../../utilities/users-service"
 export default function Logout ({ user, setUser }) {
   function handleLogOut () {
     logOut()
-    setUser(null)
   }
   return (
     <>
