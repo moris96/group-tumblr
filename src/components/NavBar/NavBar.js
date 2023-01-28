@@ -1,38 +1,28 @@
-import React from "react"
-import Popup from "reactjs-popup"
-import { Link } from 'react-router-dom'
 import Logo from "../Logo/Logo"
 import SearchBar from "../SearchBar/SearchBar"
-import 'reactjs-popup/dist/index.css';
-import Account from "../Account/Account";
-import HomePage from "../../pages/HomePage/HomePage"
-import PostOptions from "../PostOptions/PostOptions"
+import { Link } from 'react-router-dom';
+// https://remixicon.com
 // import styles from "../components/NavBar/NavBar.module.scss"
 
 
 export default function NavBar(props){
-
-  const handleClick = (i) => {
-    if (i === 0) {
-      <HomePage />
-    }
-  }
-
   return(
     <div className="navBarContainer">
 
       <Logo />
       <SearchBar />
-      <Link to='/'><button className="home-button"><img className="home-icon" src={process.env.PUBLIC_URL+"/iconsImg/8.png"} alt="icon" /></button></Link>&nbsp;
-      <button className="explore-button"><img className="explore-icon" src={process.env.PUBLIC_URL+"/iconsImg/7.png"} alt="explore" /></button>&nbsp;
-      <button className="mail-button"><img className="mail-icon" src={process.env.PUBLIC_URL+"/iconsImg/5.png"} alt="explore" /></button>&nbsp;
-      <button className="chat-button"><img className="chat-icon" src={process.env.PUBLIC_URL+"/iconsImg/4.png"} alt="chat" /></button>&nbsp;
-      <Popup trigger={<button className="account-button"><img className="account-icon" src={process.env.PUBLIC_URL+"/iconsImg/2.png"} alt="account" /></button>} >{<Account />}</Popup>
-      <Popup trigger={<button className="post-button"><img className="post-icon" src="https://www.pngkit.com/png/detail/436-4368614_png-file-new-post-icon-png.png" alt="post" /></button>} modal nested>
-        {close1=>(
-        <PostOptions newPostElement={props.newPostElement} setNewPostElement={props.setNewPostElement} close1={close1} user={props.user}/>
-        )}
-      </Popup>
+      <button className="home-button"><img className="home-icon" src="https://static.thenounproject.com/png/77002-200.png" alt="icon" /></button>&nbsp;
+      <button className="explore-button"><img className="explore-icon" src="https://t3.ftcdn.net/jpg/03/16/35/26/360_F_316352607_hAJzMbFFXKW3EsB9vL51KuKh50MwekEC.jpg" alt="explore" /></button>&nbsp;
+      {props.user ? <>
+        <button className="mail-button"><img className="mail-icon" src="https://img.freepik.com/free-icon/envelope_318-408141.jpg?w=2000" alt="explore" /></button>&nbsp;
+        <button className="chat-button"><img className="chat-icon" src="https://cdn-icons-png.flaticon.com/512/40/40284.png" alt="chat" /></button>&nbsp;
+        <button className="account-button"><img className="account-icon" src="https://static.thenounproject.com/png/4038155-200.png" alt="account" /></button>&nbsp;
+        <button className="post-button"><img className="post-icon" src="https://www.pngkit.com/png/detail/436-4368614_png-file-new-post-icon-png.png" alt="post" /></button>&nbsp;
+      </>:<>
+      {/* <i class="ri-login-box-line"></i> */}
+        <Link to="/login"><button alt="Login"><i class="ri-login-box-line nav-icon" ></i></button></Link>
+        <Link to="/signup"><button alt="Sign Up"><i class="ri-account-box-line"></i></button></Link>
+      </>}
     </div>
     )
 }
