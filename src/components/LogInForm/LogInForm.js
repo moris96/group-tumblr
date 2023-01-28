@@ -42,7 +42,9 @@ export default function LoginForm ({ setUser }) {
           &nbsp;
           <label>Password: </label>
           <input type='password' name='password' value={credentials.password} onChange={handleChange} required />
-          <button type='submit'>LOG IN</button>
+          <div className={styles.buttonContainer}>
+            <button type='submit'>LOG IN</button>
+          </div>
         </form>
       </div>
       <h1 className='error-message'>&nbsp;{error}</h1>

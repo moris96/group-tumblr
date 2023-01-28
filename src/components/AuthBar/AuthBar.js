@@ -4,8 +4,11 @@ import LoginPage from "../LoginPage/LoginPage"
 import styles from "../AuthBar/AuthBar.module.scss"
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Logo from "../Logo/Logo";
+import "../AuthBar/AuthBar.css"
 
 export default function AuthBar (props) {
+
+
   return (
   <div className={styles.authBarContainer}>
     <section className={styles.authLeftSide}> 
@@ -14,7 +17,6 @@ export default function AuthBar (props) {
     </section>
     <section className={styles.authBtns}>
       <Popup trigger={<button className={styles.logIn}>Log In</button>}
-
       modal
       nested
       >
