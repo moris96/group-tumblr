@@ -1,5 +1,10 @@
+:root {
+    --background-color: #041c34;
+}
+
+
 body {
-    background-color: #041c34;
+    background-color: var(--background-color);
 }
 
 /* navbar */
@@ -101,4 +106,59 @@ body {
     background-color: #041c34;
 }
 
+.search-bar {
+    background-color: #758494;
+    /* color: white; */
+    position: relative;
+    top: 30%;
+    left: 5%;
+    height: 30px;
+    width: 300px;
+    border-radius: .2rem;
+}
+.search-submit {
+    position: relative;
+    top: 30%;
+    left: 5%;
+}
+
+/* Popup */
+
+.popup-content {
+    margin: auto;
+    background: green;
+    width: 50%;
+    padding: 5px;
+    border: none;
+}
+
+[role=tooltip].popup-content {
+    width: 200px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .16);
+    border-radius: 10px
+}
+
+.popup-overlay {
+    background: rgba(0, 0, 0, .5)
+}
+
+[data-popup=tooltip].popup-overlay {
+    background: transparent
+}
+
+.popup-arrow {
+    -webkit-filter: drop-shadow(0 -3px 3px rgba(0, 0, 0, .16));
+    filter: drop-shadow(0 -3px 3px rgba(0, 0, 0, .16));
+    color: #fff;
+    stroke-width: 2px;
+    stroke: #d7d7d7;
+    stroke-dasharray: 30px;
+    stroke-dashoffset: -54px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0
+} 
+
+/* Popup */
 
