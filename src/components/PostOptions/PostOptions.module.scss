@@ -3,55 +3,93 @@
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
+  height: 100px;
 }
 
 .photos {
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
 .circle {
   display: grid;
-    width: 90px;
-    height: 70px;
-    background-color: blue;
+    width: 95px;
+    height: 90px;
+    background-color: orangered;
     border-radius: 50%;
+  position: relative;
+  top: 13%;
 }
 .circle2 {
   display: grid;
-    width: 90px;
-    height: 70px;
-    background-color: red;
+  width: 95px;
+  height: 90px;
+    background-color: #fc8c04;
     border-radius: 50%;
+    position: relative;
+    top: 13%;
 }
 .circle3 {
   display: grid;
-    width: 90px;
-    height: 70px;
-    background-color: purple;
+  width: 95px;
+  height: 90px;
+    background-color: #04cc34;
     border-radius: 50%;
+    position: relative;
+  top: 13%;
 }
 .circle4 {
   display: grid;
-    width: 90px;
-    height: 70px;
-    background-color: lightgreen;
+  width: 95px;
+    height: 90px;
+    background-color: #04bbfb;
     border-radius: 50%;
+    position: relative;
+  top: 13%;
 }
 .circle5 {
   display: grid;
-    width: 90px;
-    height: 70px;
-    background-color: lightpink;
+  width: 95px;
+    height: 90px;
+    background-color: #7b5bfb;
     border-radius: 50%;
+    position: relative;
+  top: 13%;
 }
 .circle6 {
   display: grid;
-    width: 90px;
-    height: 70px;
-    background-color: goldenrod;
+  width: 95px;
+  height: 90px;
+    background-color: #fb63cb;
     border-radius: 50%;
+    position: relative;
+  top: 13%;
 }
 .wordContainer {
   text-align: center;
+}
+
+.photoImg {
+  position: relative;
+  top: 20%;
+}
+.quoteImg {
+  position: relative;
+  top: 20%;
+}
+.linkImg {
+  position: relative;
+  top: 20%;
+}
+.chatImg {
+  position: relative;
+  top: 20%;
+}
+.audioImg {
+  position: relative;
+  top: 20%;
+}
+.videoImg {
+  position: relative;
+  top: 20%;
 }
