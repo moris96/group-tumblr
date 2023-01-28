@@ -10,10 +10,14 @@
   grid-row: 1/2;
 }
 
+.searchBarAuth {
+  margin: 3px 0 2px 0;
+}
+
 .authBtns {
   display: flex;
   justify-content: end;
-  margin: 10px 20px 0 0;
+  margin: 3px 20px 0 0;
   grid-row: 1/2;
   max-height: 45px;
 }
@@ -25,10 +29,11 @@
   padding: 6px 20px;
   text-align: center;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 5px;
   line-height: 1.5;
   font-weight: 700;
   max-height: 45px;
+  border: none
 }
 
 .logIn-content {
@@ -42,8 +47,9 @@
   padding: 6px 15px;
   text-align: center;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 5px;
   line-height: 1.5;
   font-weight: 700;
   max-height: 45px;
+  border: none
 }

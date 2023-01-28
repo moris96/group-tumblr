@@ -13,7 +13,9 @@ export default function AuthBar (props) {
   <div className={styles.authBarContainer}>
     <section className={styles.authLeftSide}> 
       <Logo />
-      <SearchBar />
+      <section className={styles.searchBarAuth}>
+        <SearchBar />
+      </section>
     </section>
     <section className={styles.authBtns}>
       <Popup trigger={<button className={styles.logIn}>Log In</button>}

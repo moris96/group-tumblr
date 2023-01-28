@@ -57,11 +57,18 @@ export default class SignUpForm extends Component {
                 <input type="text" name="profilePhoto" value={this.state.profilePhoto} onChange={this.handleChange} /><br/>
                 <label>Password: <span className={styles.required}>*</span></label>
                 <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required /><br/>
-                <label>Confirm: </label>
+                <label>Confirm: <span className={styles.required}>*</span></label>
                 <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
                 </section>
                 <div className={styles.btnSection}>
-                  <button type="submit" disabled={disable}>SIGN UP</button>
+                  <button 
+                  type="submit" 
+                  className={styles.signUpBtn}
+                  disabled={disable}
+                  >SIGN UP
+                  &nbsp;
+                  <img src={process.env.PUBLIC_URL+"/iconsImg/right-arrow.png"} alt="right-arrow" className={styles.rightArrow} />
+                  </button>
                 </div>
               </form>
             </div>

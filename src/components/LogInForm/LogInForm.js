@@ -43,7 +43,10 @@ export default function LoginForm ({ setUser }) {
           <label>Password: </label>
           <input type='password' name='password' value={credentials.password} onChange={handleChange} required />
           <div className={styles.buttonContainer}>
-            <button type='submit'>LOG IN</button>
+            <button className={styles.logInBtn} type='submit'>LOG IN
+            &nbsp;
+            <img src={process.env.PUBLIC_URL+"/iconsImg/right-arrow.png"} alt="right-arrow" className={styles.rightArrow} />
+            </button>
           </div>
         </form>
       </div>
