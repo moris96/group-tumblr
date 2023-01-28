@@ -7,11 +7,24 @@ body {
     display: flex;
     flex-wrap: nowrap;
     background-color: #041c34;
-    border-bottom: 5px solid red;
+    border-bottom: 1px solid ghostwhite;
+    margin: auto;
 }
-.logo-button {
-    width: 100px;
-    background-color: #041c34;
+.search-bar {
+    background-color: #758494;
+    /* color: white; */
+    position: relative;
+    top: 5%;
+    left: 9%;
+    height: 30px;
+    width: 480px;
+    border-radius: .2rem;
+}
+.logo {
+    background: transparent;
+    border: none;
+    position: relative;
+    left: 2%;
 }
 .home-icon {
     width: 50px;
@@ -37,14 +50,10 @@ body {
     width: 45px;
     height: 35px;
 }
-
-.logo {
-    border-radius: 2rem;
-}
 .home-button {
     border: none;
-    position: relative;
-    left: 1030px;
+    position: absolute;
+    right: 500px;
     width: 45px;
     height: 35px;
     background-color: #041c34;
@@ -52,7 +61,7 @@ body {
 .explore-button {
     border: none;
     position: relative;
-    left: 55%;
+    left: 46%;
     width: 45px;
     height: 35px;
     background-color: #041c34;
@@ -60,7 +69,7 @@ body {
 .mail-button {
     border: none;
     position: relative;
-    left: 55%;
+    left: 47%;
     width: 45px;
     height: 35px;
     background-color: #041c34;
@@ -68,7 +77,7 @@ body {
 .chat-button {
     border: none;
     position: relative;
-    left: 55%;
+    left: 48%;
     width: 45px;
     height: 35px;
     background-color: #041c34;
@@ -77,7 +86,7 @@ body {
     /* border-radius: 2rem; */
     border: none;
     position: relative;
-    left: 55%;
+    left: 48.75%;
     width: 45px;
     height: 35px;
     background-color: #041c34;
@@ -86,24 +95,10 @@ body {
     /* border-radius: 2rem; */
     border: none;
     position: relative;
-    left: 55%;
+    left: 50%;
     width: 45px;
     height: 35px;
-    background-color: #04bcfc;
+    background-color: #041c34;
 }
 
-.search-bar {
-    background-color: #758494;
-    /* color: white; */
-    position: relative;
-    top: 30%;
-    left: 5%;
-    height: 30px;
-    width: 300px;
-    border-radius: .2rem;
-}
-.search-submit {
-    position: relative;
-    top: 30%;
-    left: 5%;
-}
+

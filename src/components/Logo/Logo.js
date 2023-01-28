@@ -7,7 +7,7 @@ export default function Logo () {
 
   return (
     <>
-      <button className="logo"><img src="https://www.clipartmax.com/png/middle/138-1384887_tumblr-icon-black-tumblr-logo-png.png" alt="logo" className="logo-button" onClick={handleClick} /></button>
+      <button className="logo"><img src={process.env.PUBLIC_URL+"/iconsImg/logo.png"} alt="logo" className="logo-image" onClick={handleClick} /></button>
       
     </>
   )
