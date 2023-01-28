@@ -1,9 +1,8 @@
-
 .footerContainer {
   position:fixed;
   left:0px;
   bottom:0px;
-  height:30px;
+  height:2.25em;
   width:100%;
   background:#999;
   display: flex;
@@ -12,5 +11,11 @@
 
 .footerplaceholder {
   margin: 0 0;
-
 }
+
+a {
+  margin: .5em;
+  padding-bottom: .5em;
+  font-size: 1em;
+}
+
