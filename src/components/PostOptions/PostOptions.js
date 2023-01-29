@@ -11,7 +11,7 @@ export default function PostOptions (props) {
 
   return (
     <section className={styles.postOptionsContainer}>
-      <Popup trigger={<p>TEXT</p>} modal>
+      <Popup trigger={<Circle num="0" text="Text"></Circle>} modal>
         {close => (
           <div>
             <Text close1={props.close1}
@@ -25,36 +25,27 @@ export default function PostOptions (props) {
           </div>  
         )}
       </Popup>
-      <div className={styles.circle}>
-        <div className={styles.wordContainer}>
-          <p className={styles.photos}>PHOTOS</p>&nbsp;
-        </div>
-      </div>
-      <div className={styles.circle2}>
-        <div className={styles.wordContainer}>
-          <p className={styles.photos}>QUOTES</p>&nbsp;
-        </div>
-      </div>
-      <div className={styles.circle3}>
-        <div className={styles.wordContainer}>
-          <p className={styles.photos}>LINKS</p>&nbsp;
-        </div>
-      </div>
-      <div className={styles.circle4}>
-        <div className={styles.wordContainer}>
-          <p className={styles.photos}>CHAT</p>&nbsp;
-        </div>
-      </div>
-      <div className={styles.circle5}>
-        <div className={styles.wordContainer}>
-          <p className={styles.photos}>AUDIO</p>&nbsp;
-        </div>
-      </div>
-      <div className={styles.circle6}>
-        <div className={styles.wordContainer}>
-          <p className={styles.photos}>VIDEO</p>&nbsp;
-        </div>
-      </div>
+      <Circle num="1" text="PHOTOS"></Circle>
+      <Circle num="2" text="QUOTES"></Circle>
+      <Circle num="3" text="LINKS"></Circle>
+      <Circle num="4" text="CHAT"></Circle>
+      <Circle num="5" text="AUDIO"></Circle>
+      <Circle num="6" text="VIDEO"></Circle>
     </section>  
   )
+}
+
+function Circle(props){
+  return (<>
+  <div>
+    <div className={`${styles.circle} ${styles[`circle${props.num}`]}`}>
+      <img src={process.env.PUBLIC_URL+"/logo192.png"}></img>
+
+      </div>
+      <div className={styles.wordContainer}>
+          <p className={styles.photos}>{props.text}</p>&nbsp;
+        </div>
+    
+  </div>
+  </>)
 }
