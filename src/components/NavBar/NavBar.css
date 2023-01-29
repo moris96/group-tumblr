@@ -1,0 +1,112 @@
+/* navbar */
+.navBarContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: var(--background-color);
+  border-bottom: 1px solid ghostwhite;
+  margin: auto;
+}
+.search-bar {
+  background-color: #758494;
+  color: ghostwhite;
+  position: relative;
+  top: 5%;
+  left: 9%;
+  height: 30px;
+  width: 300px;
+  border-radius: .2rem;
+}
+.logo {
+  background: transparent;
+  border: none;
+  position: relative;
+  left: 2%;
+}
+
+.nav-bar-left{
+  display: flex;
+}
+
+
+
+.home-icon {
+  width: 50px;
+  height: 40px;
+}
+.explore-icon {
+  width: 50px;
+  height: 40px;
+}
+.mail-icon {
+  width: 50px;
+  height: 40px;
+}
+.chat-icon {
+  width: 50px;
+  height: 40px;
+}
+.account-icon {
+  width: 50px;
+  height: 40px;
+}
+.post-icon {
+  width: 45px;
+  height: 35px;
+}
+.home-button {
+  border: none;
+  /* position: absolute; */
+  right: 500px;
+  width: 45px;
+  height: 35px;
+  background-color: #041c34;
+}
+.explore-button {
+  border: none;
+  position: relative;
+  left: 46%;
+  width: 45px;
+  height: 35px;
+  background-color: #041c34;
+}
+.mail-button {
+  border: none;
+  position: relative;
+  left: 47%;
+  width: 45px;
+  height: 35px;
+  background-color: #041c34;
+}
+.chat-button {
+  border: none;
+  position: relative;
+  left: 48%;
+  width: 45px;
+  height: 35px;
+  background-color: #041c34;
+}
+.account-button {
+  /* border-radius: 2rem; */
+  border: none;
+  position: relative;
+  left: 48.75%;
+  width: 45px;
+  height: 35px;
+  background-color: #041c34;
+}
+.post-button {
+  /* border-radius: 2rem; */
+  border: none;
+  position: relative;
+  left: 50%;
+  width: 45px;
+  height: 35px;
+  background-color: #041c34;
+}
+
+
+.search-submit {
+  position: relative;
+  top: 30%;
+  left: 5%;
+}
