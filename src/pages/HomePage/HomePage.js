@@ -8,15 +8,15 @@ export default function HomePage({user, newPostElement, setNewPostElement}){
     return (
     <section className={styles.homePageContainer}>
       <div className={styles.rightSide}>
-				{/* <PostOptions /> */}
-				<PostList newPostElement={newPostElement} setNewPostElement={setNewPostElement} user={user}/>
-			</div>
-			<div className={styles.leftSide}>
-				<SuggestedFollows />
-			</div>
-			<div>
-				<Footer />
-			</div>
+                {/* <PostOptions /> */}
+                <PostList newPostElement={newPostElement} setNewPostElement={setNewPostElement} user={user}/>
+            </div>
+            <div className={styles.leftSide}>
+                <SuggestedFollows />
+            </div>
+            <div>
+                <Footer />
+            </div>
     </section>
     )
 }
