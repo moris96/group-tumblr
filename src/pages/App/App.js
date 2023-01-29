@@ -5,6 +5,8 @@ import { Routes, Route } from "react-router-dom"
 import NavBar from "../../components/NavBar/NavBar"
 import HomePage from "../HomePage/HomePage"
 import { getUser } from "../../utilities/users-service"
+import Footer from "../../components/Footer/Footer"
+
 
 function App() {
   
@@ -25,22 +27,20 @@ function App() {
 
   useEffect(() => {
     fetchState()
-  }, [])
+  }, [user])
   
-  
+  function testUser() {
+console.log(user, "test")
+return user
+  }
   return (
     <main className="App">
-      {
-        user ?
-        <>
-          <NavBar user={user} newPostElement={newPostElement} setNewPostElement={setNewPostElement} />
+     
+          <NavBar user={testUser()} newPostElement={newPostElement} setNewPostElement={setNewPostElement} />
           <Routes>
             <Route path="/" element={<HomePage newPostElement={newPostElement} setNewPostElement={setNewPostElement} user={user}/>} />
           </Routes>
-        </>
-        :
-        <AuthPage setUser={setUser}/>
-      }
+          <Footer></Footer>
     </main>
   );
 }
