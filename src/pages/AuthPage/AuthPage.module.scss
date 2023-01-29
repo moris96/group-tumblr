@@ -1,14 +1,5 @@
 .auth  {
-  color: lime;
+  color: var(--font-color);
   background-color: var(--background-color);
 }
 
-#Auth a  {
-  color: forestgreen;
-  font-size: x-large;
-  margin: 1em;
-  border: .1em white solid;
-}
-#Auth a:visited  {
-  color: forestgreen;
-}

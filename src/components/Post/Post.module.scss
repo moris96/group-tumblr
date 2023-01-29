@@ -1,0 +1,35 @@
+.postContainer {
+  background: white;
+  color: black;
+  border-radius: 3px;
+  margin: 20px 5px;
+  padding: 10px 10px;
+}
+
+.socialContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.commentIcon {
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  padding-top: 5px;
+}
+
+.shareIcon {
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.likeIcon {
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  padding-top: 4px;
+}

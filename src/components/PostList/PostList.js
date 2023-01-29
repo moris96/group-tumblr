@@ -18,7 +18,6 @@ export default function PostList({user, newPostElement, setNewPostElement}) {
 
   return (
     <div className="post-list">
-      <h1>Post List</h1>
       {posts ? posts.map((post) => {
         return <Post key={post._id} newPostElement={newPostElement} setNewPostElement={setNewPostElement} post={post} user={user} />;
       }): "Nothing here"}

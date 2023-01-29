@@ -14,10 +14,10 @@ export default function Notes({post, user, newPostElement, setNewPostElement}){
     return(
         <ul>
             {post.notes.map((note)=>{
-               return(
+                return(
                 <li key={note._id}>{note.text}
                 {note.createdBy === user._id ? <button onClick={()=>deleteComment(note._id)}>Delete Comment</button>: ""}</li>
-               ) 
+                ) 
             })}
         </ul>
     )
