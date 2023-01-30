@@ -1,10 +1,15 @@
 /* navbar */
 .navBarContainer {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-rows: 1fr;
+  border-bottom: 1px solid var(--breakline-color);
+  padding-top: 5px;
   background-color: var(--background-color);
-  border-bottom: 1px solid ghostwhite;
-  margin: auto;
+  border-bottom: 1px solid var(--breakline-color);
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
 }
 
 
@@ -12,44 +17,26 @@
   cursor: pointer;
 }
 
-.nav-bar-right {
-  display: flex;
-  flex-wrap: nowrap;
-
-}
-
-.nav-bar-left {
-  display:flex;
-  justify-content: flex-end;
-}
-
-.search-bar {
-  background-color: #758494;
-  color: ghostwhite;
-  position: relative;
-  top: 5%;
-  left: 9%;
-  height: 30px;
-  width: 300px;
-  border-radius: .2rem;
-}
-.logo {
-  background: transparent;
-  border: none;
-  position: relative;
-  left: 2%;
-}
-
 .nav-bar-left{
   display: flex;
+  flex-wrap: nowrap;
+  grid-row: 1/2;
+}
+
+.nav-bar-right{
+  display: flex;
+  justify-content: end;
+  margin: 3px 50px 0 0;
+  grid-row: 1/2;
+  max-height: 45px;
 }
 
 
 
-.home-icon {
-  width: 50px;
-  height: 40px;
+.searchNavBar {
+  padding-top: 4px;
 }
+
 .explore-icon {
   width: 50px;
   height: 40px;
@@ -65,23 +52,17 @@
 .account-icon {
   width: 50px;
   height: 40px;
+  margin: -2px 0 0 -8px;
 }
 .post-icon {
   width: 45px;
   height: 35px;
 }
-.home-button {
-  border: none;
-  /* position: absolute; */
-  right: 500px;
-  width: 45px;
-  height: 35px;
-  background-color: #041c34;
-}
+
 .explore-button {
   border: none;
   position: relative;
-  left: 46%;
+  /* left: 46%; */
   width: 45px;
   height: 35px;
   background-color: #041c34;
@@ -89,7 +70,7 @@
 .mail-button {
   border: none;
   position: relative;
-  left: 47%;
+  /* left: 47%; */
   width: 45px;
   height: 35px;
   background-color: #041c34;
@@ -97,7 +78,7 @@
 .chat-button {
   border: none;
   position: relative;
-  left: 48%;
+  /* left: 48%; */
   width: 45px;
   height: 35px;
   background-color: #041c34;
@@ -106,7 +87,6 @@
   /* border-radius: 2rem; */
   border: none;
   position: relative;
-  left: 48.75%;
   width: 45px;
   height: 35px;
   background-color: #041c34;
@@ -115,9 +95,7 @@
   /* border-radius: 2rem; */
   border: none;
   position: relative;
-  left: 50%;
   width: 45px;
-  height: 35px;
   background-color: #041c34;
 }
 
