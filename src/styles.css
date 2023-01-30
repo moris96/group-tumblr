@@ -1,6 +1,7 @@
 :root {
     --background-color: #011935;
-    --font-color: white;
+    --font-color: ghostwhite; 
+    --second-font-color: #00b8ff;
 }
 
 

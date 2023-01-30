@@ -20,10 +20,12 @@ export default function NavBar(props){
   }
 
   return(
-    <div className="navBarContainer">
-      <Logo user={props}/>
-      <SearchBar />
-      <section className="nav-bar-left">
+    <section className="navBarContainer">
+      <div className="nav-bar-right">
+        <Logo user={props}/>
+        <SearchBar />
+      </div>
+      <div className="nav-bar-left">
         <Link to='/'><button className="home-button"><img className="home-icon" src={process.env.PUBLIC_URL+"/iconsImg/8.png"} alt="icon" /></button></Link>&nbsp;
         <button className="explore-button"><img className="explore-icon" src={process.env.PUBLIC_URL+"/iconsImg/7.png"} alt="explore" /></button>&nbsp;
         <button className="mail-button"><img className="mail-icon" src={process.env.PUBLIC_URL+"/iconsImg/5.png"} alt="explore" /></button>&nbsp;
@@ -34,7 +36,7 @@ export default function NavBar(props){
           <PostOptions newPostElement={props.newPostElement} setNewPostElement={props.setNewPostElement} close1={close1} user={props.user}/>
           )}
         </Popup>
-      </section>
-    </div>
+      </div>
+    </section>
     )
 }
