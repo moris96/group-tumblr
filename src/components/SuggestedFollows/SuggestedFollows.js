@@ -19,7 +19,7 @@ export default function SuggestedFollows () {
 
 
   return (
-    <div className={styles.suggestedContainer}>
+    <section className={styles.suggestedContainer}>
       <h1 classsName={styles.suggestedTitle}>
         Check out these blogs
       </h1>
@@ -29,6 +29,6 @@ export default function SuggestedFollows () {
             {user.username}
             </p>
         }): "No users to show"}
-    </div>
+    </section>
   )
 }

@@ -4,9 +4,9 @@
   bottom:0px;
   height:2.25em;
   width:100%;
-  background:#999;
-  display: flex;
-  justify-content: center;
+  background:transparent;
+  display: flex; 
+  margin-left: 70%;
 }
 
 .footerplaceholder {
@@ -17,5 +17,6 @@ a {
   margin: .5em;
   padding-bottom: .5em;
   font-size: 1em;
+  color: var(--second-font-color)
 }
 

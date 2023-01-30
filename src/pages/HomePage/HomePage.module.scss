@@ -1,10 +1,12 @@
 
 .homePageContainer {
   display: flex;
+  width: 100%;
 }
 
 .rightSide {
   display: flex;
   // flex-direction: column;
   margin: 0 20px;
+  width:900px;
 }

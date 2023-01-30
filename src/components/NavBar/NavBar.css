@@ -6,6 +6,23 @@
   border-bottom: 1px solid ghostwhite;
   margin: auto;
 }
+
+
+.nav-button{
+  cursor: pointer;
+}
+
+.nav-bar-right {
+  display: flex;
+  flex-wrap: nowrap;
+
+}
+
+.nav-bar-left {
+  display:flex;
+  justify-content: flex-end;
+}
+
 .search-bar {
   background-color: #758494;
   color: ghostwhite;
