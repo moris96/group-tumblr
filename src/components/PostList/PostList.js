@@ -1,5 +1,6 @@
-import Post from '../Post/Post'
 import { useState, useEffect } from 'react'
+import Post from '../Post/Post'
+import styles from "../PostList/PostList.module.scss"
 
 export default function PostList({user, newPostElement, setNewPostElement}) {
     const [posts, setPosts] = useState(null)
@@ -17,9 +18,14 @@ export default function PostList({user, newPostElement, setNewPostElement}) {
     },[newPostElement])
 
   return (
-    <div className="post-list">
+    <div className={styles.postListContainer}>
       {posts ? posts.map((post) => {
-        return <Post key={post._id} newPostElement={newPostElement} setNewPostElement={setNewPostElement} post={post} user={user} />;
+        return <Post 
+        key={post._id} 
+        newPostElement={newPostElement} 
+        setNewPostElement={setNewPostElement} 
+        post={post} 
+        user={user} />;
       }): "Nothing here"}
     </div>
   );

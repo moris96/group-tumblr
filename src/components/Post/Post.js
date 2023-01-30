@@ -12,7 +12,7 @@ export default function Post({post, user, newPostElement, setNewPostElement}){
 
     return(
         <div className={styles.postContainer}>
-            <h2>{user.username}</h2>
+            {/* <h2>{user.username}</h2> */}
             <h1>{post.title}</h1>
             <h3>{post.text}</h3>
             <section className={styles.socialContainer}>
