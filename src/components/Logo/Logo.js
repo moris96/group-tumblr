@@ -1,7 +1,5 @@
-import AuthPage from "../../pages/AuthPage/AuthPage"
-import { Routes, Route } from "react-router-dom"
-import NavBar from "../NavBar/NavBar"
-import HomePage from "../../pages/HomePage/HomePage"
+import styles from "../Logo/Logo.module.scss"
+
 
 export default function Logo () {
 
@@ -21,7 +19,7 @@ export default function Logo () {
 
   return (
     <>
-      <button className="logo"><img src={process.env.PUBLIC_URL+"/iconsImg/logo.png"} alt="logo" className="logo-image" onClick={handleClick} /></button>
+      <button className={styles.logo}><img src={process.env.PUBLIC_URL+"/iconsImg/logo.png"} alt="logo" className="logo-image" onClick={handleClick} /></button>
     </>
   )
 }

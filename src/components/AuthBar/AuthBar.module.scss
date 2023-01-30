@@ -1,7 +1,12 @@
 .authBarContainer {
-  display:grid;
+  display: grid;
   grid-template-rows: 1fr;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--breakline-color);
+  padding-top: 5px;
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
 }
 
 .authLeftSide {
