@@ -2,7 +2,7 @@ import Post from '../Post/Post'
 import { useState, useEffect } from 'react'
 import styles from "../AuthBody/AuthBody.module.scss"
 
-export default function AuthBody ({user}) {
+export default function AuthBody () {
   // const [posts, setPosts] = useState(null)
   // const getPosts = async () => {
   //     try {
