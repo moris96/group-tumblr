@@ -1,20 +1,22 @@
+import { Routes, Route } from "react-router-dom"
+import UserPage from "../../pages/UserPage/UserPage"
+import AuthPage from "../../pages/AuthPage/AuthPage"
 import styles from "../Logo/Logo.module.scss"
 
 
 export default function Logo () {
 
   const handleClick = ({user}) => {
-    // {
-    //   user ?
-    //   <>
-    //     <NavBar user={user} newPostElement={newPostElement} setNewPostElement={setNewPostElement} />
-    //     <Routes>
-    //       <Route path="/" element={<HomePage newPostElement={newPostElement} setNewPostElement={setNewPostElement} user={user}/>} />
-    //     </Routes>
-    //   </>
-    //   :
-    //   <AuthPage setUser={setUser}/>
-    // }
+    {
+      user ?
+      <>
+        <Routes>
+          <Route path="/" element={<UserPage user={user}/>} />
+        </Routes>
+      </>
+      :
+      <AuthPage />
+    }
   }
 
   return (

@@ -57,6 +57,7 @@
 .post-icon {
   width: 45px;
   height: 35px;
+  border-radius: 5px;
 }
 
 .explore-button {

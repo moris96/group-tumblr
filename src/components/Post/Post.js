@@ -27,7 +27,7 @@ export default function Post({post, user, newPostElement, setNewPostElement}){
                 user={user}
                 newPostElement={newPostElement}
                 setNewPostElement={setNewPostElement}/>:""}
-                <div><img className={styles.shareIcon} src={process.env.PUBLIC_URL+"/iconsImg/share-icon.png"} alt="share" /></div>
+                <div><img className={styles.reblogIcon} src={process.env.PUBLIC_URL+"/iconsImg/reblog.png"} alt="reblog" /></div>
                 <div><img className={styles.likeIcon} src={process.env.PUBLIC_URL+"/iconsImg/like-icon.png"} alt="like" /></div>
             </section>
             {post.notes ? 
