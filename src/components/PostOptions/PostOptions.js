@@ -4,6 +4,7 @@ import React from "react"
 import Popup from "reactjs-popup"
 import 'reactjs-popup/dist/index.css';
 import Text from "./Text/Text";
+import Photo from "./Photo/Photo";
 
 
 
@@ -25,12 +26,27 @@ export default function PostOptions (props) {
           </div>  
         )}
       </Popup>
-      <div className={styles.circle}>
+      <Popup trigger={
+        <div className={styles.circle}>
         <div className={styles.wordContainer}>
           <img className={styles.photoImg} src={process.env.PUBLIC_URL+"/iconsImg/photos.png"} alt="photos"/>
           {/* <p className={styles.photos}>PHOTOS</p>&nbsp; */}
         </div>
       </div>
+      } modal>
+        {close => (<div>
+          <Photo onClick close1={props.close1}
+          close={close}
+          user={props.user}
+          newPostElement={props.newPostElement}
+          setNewPostElement={props.setNewPostElement} />
+          <a className="close" onClick={close}>
+            &times;
+          </a> 
+          </div>
+        )}
+      </Popup>
+      
       <div className={styles.circle2}>
         <div className={styles.wordContainer}>
         <img className={styles.quoteImg} src={process.env.PUBLIC_URL+"/iconsImg/quote.png"} alt="quote"/>
