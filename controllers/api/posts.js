@@ -19,6 +19,19 @@ const dataController = {
       }
     })
   },
+  userIndex(req, res, next){
+    Post.find({blogId: req.params.id}).populate('notes').exec((err, foundPosts) => {
+      if (err) {
+        res.status(400).send({
+          msg: err.message
+        })
+      } else {
+        foundPosts.sort((a, b) => b.createdAt - a.createdAt)
+        res.locals.data.posts = foundPosts
+        next()
+      }
+    })
+  },
   // Destroy
   destroy (req, res, next) {
     Post.findByIdAndDelete(req.params.id, (err, deletedPost) => {

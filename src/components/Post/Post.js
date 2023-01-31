@@ -1,17 +1,33 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import NewComment from "../NewComment/NewComment"
 import Notes from "../Notes/Notes"
 import styles from "../Post/Post.module.scss"
+import { Link } from "react-router-dom"
 
-export default function Post({post, user, newPostElement, setNewPostElement}){
+export default function Post({post, user, blog, newPostElement, setNewPostElement}){
     const [showComments, setShowComment] = useState(false)
     const [createComment, setCreateComment] = useState(false)
+    const [foundBlog, setFoundBlog] = useState(null)
     const displayPostComments = () => {
         setShowComment(!showComments)
     }
 
+    const findBlog = async () => {
+        try {
+            const response = await fetch(`/api/blogs/${post.blogId}`)
+            const data = await response.json()
+            setFoundBlog(data)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    useEffect(()=>{
+        findBlog()
+    }, [])
+
     return(
         <div className={styles.postContainer}>
+            {foundBlog? <Link to={`/${post.blogId}`}>{foundBlog.userName}</Link>:""}
             {/* <h2>{user.username}</h2> */}
             <h1>{post.title}</h1>
             <h3>{post.text}</h3>
@@ -25,6 +41,7 @@ export default function Post({post, user, newPostElement, setNewPostElement}){
                 createComment={createComment}
                 setCreateComment={setCreateComment}
                 user={user}
+                blog={blog}
                 newPostElement={newPostElement}
                 setNewPostElement={setNewPostElement}/>:""}
                 <div><img className={styles.shareIcon} src={process.env.PUBLIC_URL+"/iconsImg/share-icon.png"} alt="share" /></div>
@@ -36,9 +53,10 @@ export default function Post({post, user, newPostElement, setNewPostElement}){
             {showComments? 
             <Notes post={post}
             user={user}
+            blog={blog}
             newPostElement={newPostElement}
             setNewPostElement={setNewPostElement}/>:""}
-            {user == post.creator ? 
+            {blog == post.blogId ? 
             <>
             <button>Delete</button>
             <button>Edit</button> 

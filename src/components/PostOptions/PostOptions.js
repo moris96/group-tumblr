@@ -17,6 +17,7 @@ export default function PostOptions (props) {
             <Text close1={props.close1}
             close={close}
             user={props.user}
+            blog={props.blog}
             newPostElement={props.newPostElement}
             setNewPostElement={props.setNewPostElement} />
             <a className="close" onClick={close}>

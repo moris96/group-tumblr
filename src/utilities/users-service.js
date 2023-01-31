@@ -36,7 +36,7 @@ export function getToken () {
 
 export function getUser () {
   const token = getToken()
-  console.log(token ? JSON.parse(atob(token.split('.')[1])).user : null)
+  //console.log(token ? JSON.parse(atob(token.split('.')[1])).user : null)
   return token ? JSON.parse(atob(token.split('.')[1])).user : null
 }
 

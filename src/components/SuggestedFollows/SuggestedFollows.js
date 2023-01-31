@@ -2,19 +2,19 @@ import styles from "../SuggestedFollows/SuggestedFollows.module.scss"
 import { useState, useEffect } from 'react'
 
 export default function SuggestedFollows () {
-  const [users, setUsers] = useState(null)
-  const getUsers = async () => {
+  const [blogs, setBlogs] = useState(null)
+  const getBlogs = async () => {
     try {
-      const response = await fetch(`/api/users`)
+      const response = await fetch(`/api/blogs`)
       const data = await response.json()
-      setUsers(data)
+      setBlogs(data)
     } catch (error) {
       console.error(error)
     }
   }
 
   useEffect(() => {
-    getUsers()
+    getBlogs()
   }, [])
 
 
@@ -24,9 +24,9 @@ export default function SuggestedFollows () {
         Check out these blogs
       </h1>
       <hr/>
-        {users ? users.map((user) => {
-          return <p key={user.id}>
-            {user.username}
+        {blogs ? blogs.map((blog) => {
+          return <p key={blog.id}>
+            {blog.userName}
             </p>
         }): "No users to show"}
     </section>

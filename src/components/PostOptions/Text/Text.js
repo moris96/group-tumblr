@@ -4,7 +4,7 @@ export default function Text(props){
     const [newPost, setNewPost] = useState({
         typeOfPost: "text",
         title: "",
-        blogId: props.user._id,
+        blogId: props.blog._id,
         text: ""
     })
 
@@ -24,7 +24,7 @@ export default function Text(props){
             setNewPost({
                 typeOfPost: "text",
                 title: "",
-                blogId: props.user._id,
+                blogId: props.blog._id,
                 text: ""
             })
             props.setNewPostElement(!props.newPostElement)
