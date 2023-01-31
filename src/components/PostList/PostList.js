@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Post from '../Post/Post'
 import styles from "../PostList/PostList.module.scss"
 
-export default function PostList({user, newPostElement, setNewPostElement}) {
+export default function PostList({user, blog, newPostElement, setNewPostElement}) {
     const [posts, setPosts] = useState(null)
     const getPosts = async () => {
         try {
@@ -13,6 +13,7 @@ export default function PostList({user, newPostElement, setNewPostElement}) {
             console.error(error)
         }
     }
+
     useEffect(()=>{
         getPosts()
     },[newPostElement])
@@ -25,7 +26,8 @@ export default function PostList({user, newPostElement, setNewPostElement}) {
         newPostElement={newPostElement} 
         setNewPostElement={setNewPostElement} 
         post={post} 
-        user={user} />;
+        user={user}
+        blog={blog} />;
       }): "Nothing here"}
     </section>
   );

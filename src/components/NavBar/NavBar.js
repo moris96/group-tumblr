@@ -38,7 +38,7 @@ export default function NavBar(props){
         <Popup trigger={<button className="account-button nav-button"><img className="account-icon" src={process.env.PUBLIC_URL+"/iconsImg/2.png"} alt="account" /></button>} >{<Account user={props}/>}</Popup>
         <Popup trigger={<button className="post-button nav-button"><img className="post-icon" src={process.env.PUBLIC_URL+"/iconsImg/1.png"} alt="post" /></button>} modal nested>
           {close1=>(
-          <PostOptions newPostElement={props.newPostElement} setNewPostElement={props.setNewPostElement} close1={close1} user={props.user}/>
+          <PostOptions newPostElement={props.newPostElement} setNewPostElement={props.setNewPostElement} close1={close1} user={props.user} blog={props.blog}/>
           )}
         </Popup>
       </section>

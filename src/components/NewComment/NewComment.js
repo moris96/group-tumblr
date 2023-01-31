@@ -1,11 +1,11 @@
 import { useState } from "react"
 
-export default function NewComment({post, createComment, setCreateComment, user, setNewPostElement, newPostElement}){
+export default function NewComment({post, createComment, setCreateComment, user, blog, setNewPostElement, newPostElement}){
     const [newComment, setNewComment] = useState({
         postId: post._id,
         text: "",
         likes: 0,
-        createdBy: user._id
+        createdBy: blog._id
     })
 
 
@@ -32,7 +32,7 @@ export default function NewComment({post, createComment, setCreateComment, user,
                 postId: post._id,
                 text: "",
                 likes: 0,
-                createdBy: user._id
+                createdBy: blog._id
             })
             setCreateComment(!createComment)
             setNewPostElement(!newPostElement)
@@ -46,7 +46,7 @@ export default function NewComment({post, createComment, setCreateComment, user,
         setNewComment({...NewComment, [evt.target.name]: evt.target.value,
         postId: post._id,
         likes: 0,
-        createdBy: user._id})
+        createdBy: blog._id})
     }
     return(
         <>
