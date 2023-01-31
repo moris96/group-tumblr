@@ -1,16 +1,31 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import NewComment from "../NewComment/NewComment"
 import Notes from "../Notes/Notes"
+import { Link } from 'react-router-dom'
+import styles from './Post.module.scss'
 
-export default function Post({post, user, newPostElement, setNewPostElement}){
+export default function Post({post, user, newPostElement, setNewPostElement, blog}){
     const [showComments, setShowComment] = useState(false)
     const [createComment, setCreateComment] = useState(false)
+    const [foundBlog, setFoundBlog] = useState(null)
     const displayPostComments = () => {
         setShowComment(!showComments)
     }
-
+    const findBlog = async () => {
+        try {
+            const response = await fetch(`/api/blogs/${post.blogId}`)
+            const data = await response.json()
+            setFoundBlog(data)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    useEffect(()=>{
+        findBlog()
+    }, [])
     return(
-        <div className="post">
+        <div className={styles.post}>
+            {foundBlog? <Link to={`/${post.blogId}`}>{foundBlog.userName}</Link>:""}
             <h1>{post.title}</h1>
             <h3>{post.text}</h3>
             {post.imgLink ? <img src={post.imgLink}/> : ""}
@@ -20,6 +35,7 @@ export default function Post({post, user, newPostElement, setNewPostElement}){
             createComment={createComment}
             setCreateComment={setCreateComment}
             user={user}
+            blog={blog}
             newPostElement={newPostElement}
             setNewPostElement={setNewPostElement}/>:""}
             <button>Share</button>
@@ -30,9 +46,10 @@ export default function Post({post, user, newPostElement, setNewPostElement}){
             {showComments? 
             <Notes post={post}
             user={user}
+            blog={blog}
             newPostElement={newPostElement}
             setNewPostElement={setNewPostElement}/>:""}
-            {user == post.creator ? 
+            {blog == post.blogId ? 
             <>
             <button>Delete</button>
             <button>Edit</button> 

@@ -7,7 +7,6 @@ const bcrypt = require('bcrypt')
 const SALT_ROUNDS = 6
 
 const userSchema = new Schema ({
-  profilePicture: {type: String},
   username: {
     type: String,
     unique: true,
@@ -34,12 +33,7 @@ const userSchema = new Schema ({
   },
   lastName: {
     type: String,
-  },
-  post: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Posts'
-  }],
-  following:[{type: String}]
+  }
 }, {
     timestamps: true,
     toJSON: {
@@ -58,4 +52,6 @@ userSchema.pre('save', async function (next) {
   return next()
 })
 
-module.exports = model('User', userSchema)
+const User = model('User', userSchema)
+
+module.exports = User

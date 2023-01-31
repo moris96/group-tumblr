@@ -23,6 +23,13 @@ export default class SignUpForm extends Component {
         delete formData.confirm
         const user = await signUp(formData)
         this.props.setUser(user)
+        const response = await fetch('/api/blogs', {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+        },
+          body: JSON.stringify({user: user._id, userName: user.username})
+        })
       } catch (error) {
         console.log(error);
         this.setState({ error: 'Sign Up Failed' })

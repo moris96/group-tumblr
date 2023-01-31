@@ -1,7 +1,7 @@
 import Post from '../Post/Post'
 import { useState, useEffect } from 'react'
 
-export default function PostList({user, newPostElement, setNewPostElement}) {
+export default function PostList({user, newPostElement, setNewPostElement, blog}) {
     const [posts, setPosts] = useState(null)
     const getPosts = async () => {
         try {
@@ -12,6 +12,7 @@ export default function PostList({user, newPostElement, setNewPostElement}) {
             console.error(error)
         }
     }
+    
     useEffect(()=>{
         getPosts()
     },[newPostElement])
@@ -20,7 +21,7 @@ export default function PostList({user, newPostElement, setNewPostElement}) {
     <div className="post-list">
       <h1>Post List</h1>
       {posts ? posts.map((post) => {
-        return <Post key={post._id} newPostElement={newPostElement} setNewPostElement={setNewPostElement} post={post} user={user} />;
+        return <Post key={post._id} newPostElement={newPostElement} setNewPostElement={setNewPostElement} post={post} user={user} blog={blog}/>;
       }): "Nothing here"}
     </div>
   );

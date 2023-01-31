@@ -1,19 +1,19 @@
 const express = require('express')
 const router = express.Router()
-const { dataController, apiController } = require('../../controllers/api/posts')
+const { dataController, apiController } = require('../../controllers/api/blogs')
 
 //add routes
-// Index /api/posts
+// Index /api/blogs
 router.get('/', dataController.index, apiController.index)
-// Index of posts for each user
-router.get('/user/:id', dataController.userIndex, apiController.index)
-//Delete /api/posts/:id
+// THIS ROUTE MATCHES THE BLOG TO THE USER THAT OWNS THE BLOG
+router.get('/user/:id', dataController.showUser, apiController.show)
+//Delete /api/blogs/:id
 router.delete('/:id', dataController.destroy, apiController.show)
-//Update /api/posts/:id
+//Update /api/blogs/:id
 router.put('/:id', dataController.update, apiController.show)
-//Create /api/posts
+//Create /api/blogs
 router.post('/', dataController.create, apiController.show)
-//Show /api/posts/:id
+//Show /api/blogs/:id
 router.get('/:id', dataController.show, apiController.show)
 
 
