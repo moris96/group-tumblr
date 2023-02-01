@@ -1,4 +1,6 @@
 .postContainer {
+  display: flex;
+  flex-direction: column;
   background: white;
   color: black;
   border-radius: 3px;
@@ -6,9 +8,22 @@
   padding: 10px 10px;
 }
 
-.socialContainer{
+.entryContainer{
   display: flex;
   justify-content: center;
+}
+
+.socialContainer {
+  display: flex;
+}
+
+// .notes {
+
+// }
+
+.socialBtnContainer {
+  display: flex;
+  margin-left: 80%;
 }
 
 .commentIcon {
@@ -39,4 +54,23 @@
   height: 30px;
   cursor: pointer;
   padding-top: 4px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.deleteBtn,
+.editBtn {
+  background-color: var(--second-font-color);
+  border: none;
+  border-radius: 20px;
+  width: 100px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
 }

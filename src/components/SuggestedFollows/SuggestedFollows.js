@@ -34,7 +34,7 @@ export default function SuggestedFollows () {
         Check out these blogs
       </h1>
       <hr/>
-        {blogs ? blogs.map((blog) => {
+        {blogs ? blogs.slice(0, 5).map((blog) => {
           return <h4 key={blog.id}>
             {blog.userName}
             </h4> 

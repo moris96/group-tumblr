@@ -1,17 +1,14 @@
 .footerContainer {
+  display: flex;
   position:fixed;
   left:0px;
   bottom:0px;
   height:2.25em;
   width:100%;
   background:transparent;
-  display: flex; 
-  margin-left: 65%;
+  margin-left: 75%;
 }
 
-.footerplaceholder {
-  margin: 0 0;
-}
 
 a {
   margin: .5em;

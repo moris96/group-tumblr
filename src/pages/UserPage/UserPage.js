@@ -82,10 +82,11 @@ useEffect(()=>{
       <h2 onClick={unfollowUser} className={styles.unfollowBtn}>Unfollow {pageOwner.username}</h2>
       :
       <h2 onClick={followUser} className={styles.followBtn}>Follow {pageOwner.username}</h2>):""):""}
-      
-      {posts ? posts.map((post) => {
-        return <Post key={post._id} blog={blog} post={post} user={user} newPostElement={newPostElement} setNewPostElement={setNewPostElement}/>;
-      }): "Nothing here"}
+      <section className={styles.postUserPage}>
+        {posts ? posts.map((post) => {
+          return <Post key={post._id} blog={blog} post={post} user={user} newPostElement={newPostElement} setNewPostElement={setNewPostElement}/>;
+        }): "Nothing here"}
+      </section>
   </div>
   )
 }
