@@ -7,6 +7,7 @@ import Popup from "reactjs-popup"
 import 'reactjs-popup/dist/index.css';
 import Text from "./Text/Text";
 import Photo from "./Photo/Photo";
+import Video from "./Video/Video";
 
 
 
@@ -14,7 +15,7 @@ export default function PostOptions (props) {
 
   return (
     <section className={styles.postOptionsContainer}>
-      <Popup trigger={<Circle num="0" text="Text" />} modal>
+      <Popup trigger={<div><Circle num="0" text="Text" /></div>} modal>
         {close => (
           <div>
             <Text close1={props.close1}
@@ -29,11 +30,12 @@ export default function PostOptions (props) {
           </div>  
         )}
       </Popup>
-      <Popup trigger={<Circle num="1" text="Photos"></Circle>} modal>
+      <Popup trigger={<div><Circle num="1" text="Photos"></Circle></div>} modal>
         {close => (<div>
           <Photo onClick close1={props.close1}
           close={close}
           user={props.user}
+          blog={props.blog}
           newPostElement={props.newPostElement}
           setNewPostElement={props.setNewPostElement} />
           <a className="close" onClick={close}>
@@ -47,7 +49,21 @@ export default function PostOptions (props) {
       <Circle num="3" text="LINKS"></Circle>
       <Circle num="4" text="CHAT"></Circle>
       <Circle num="5" text="AUDIO"></Circle>
-      <Circle num="6" text="VIDEO"></Circle>
+      
+      <Popup trigger={<div><Circle num="6" text="VIDEO"></Circle></div>} modal>
+        {close => (<div>
+          <Video onClick close1={props.close1}
+          close={close}
+          user={props.user}
+          blog={props.blog}
+          newPostElement={props.newPostElement}
+          setNewPostElement={props.setNewPostElement} />
+          <a className="close" onClick={close}>
+            &times;
+          </a> 
+          </div>
+        )}
+      </Popup>
       
       
       
