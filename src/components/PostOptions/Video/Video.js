@@ -1,9 +1,9 @@
 import { useState } from "react"
 
 
-export default function Photo(props){
+export default function Video(props){
   const [newPost, setNewPost] = useState({
-    typeOfPost: "photo",
+    typeOfPost: "video",
     title: "",
     imgLink: "",
     blogId: props.blog._id,
@@ -15,6 +15,13 @@ const handleChange = (evt) => {
 }
 
 const postNow = async () => {
+    let start = 0
+    for(let i=0; i<newPost.imgLink.length;i++) {
+        if(newPost.imgLink[i]==="?"){
+            start = i+1
+        }
+    }
+    newPost.imgLink = newPost.imgLink.substring(start)
     try {
         const response = await fetch(`/api/posts`, {
             method: "POST",
@@ -39,7 +46,7 @@ const postNow = async () => {
 return(
     <>
         <h4>Post Title</h4><input name="title" value={newPost.title} onChange={handleChange}></input>
-        <h4>Image Link</h4><input name="imgLink" value={newPost.imgLink} onChange={handleChange}></input>
+        <h4>Youtube Link</h4><input name="imgLink" value={newPost.imgLink} onChange={handleChange}></input>
         <h4>Text</h4><input name="text" value={newPost.text} onChange={handleChange}></input>
         <button onClick={postNow}>Post now</button>
     </>

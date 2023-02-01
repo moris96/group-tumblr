@@ -49,6 +49,9 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
             <section className={styles.socialContainer}>
                 {post.imgLink ? <img src={post.imgLink} 
                 alt="imagine"/> : ""}
+                {post.imgLink && (post.typeOfPost == 'photo') ? <img src={post.imgLink}/> : 
+                (post.imgLink &&(post.typeOfPost == 'video'))?
+                <iframe width="420" height="315"src={`https://www.youtube.com/embed/?${post.imgLink}`}></iframe>:""}
                     <div onClick={()=>setCreateComment(!createComment)}>
                     <img className={styles.commentIcon} src={process.env.PUBLIC_URL+"/iconsImg/comment-icon.png"} alt="comment" />    
                     </div>

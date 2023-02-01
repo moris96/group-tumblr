@@ -1,12 +1,15 @@
 
 .suggestedContainer {
-  background-color: var(--background-color);
+  background-color: black;
+  font-weight: bold;
   color: white;
-  width: 25vw;
-  height: 45vh;
+  width: 20vw;
+  height: 30vh;
   padding: 5px 10px;
   margin-top: 50px;
   border-radius: 2%;
+  position: relative;
+  left: 75%;
 }
 
 .suggestedTitle {

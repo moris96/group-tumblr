@@ -1,73 +1,92 @@
-
 .postOptionsContainer {
   display: flex;
+  vertical-align: baseline;
   justify-content: space-evenly;
   flex-direction: row;
-  height: 100px;
+  flex-wrap: wrap;
+}
+
+
+
+div:has( > .postOptionsContainer) {
+  // this should be moved to styles . css probably
+  background-color: transparent;
+  width: 90%;
 }
 
 .photos {
-  color: black;
+  color: white;
   font-weight: bold;
 }
 
 .circle {
-  display: grid;
-    width: 95px;
-    height: 90px;
-    background-color: orangered;
-    border-radius: 50%;
-  position: relative;
-  top: 13%;
+  // display: inline-block;
+  margin: 0em .5em;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.circleContainer:hover .circle {
+  width: 100px;
+  height: 100px;
+}
+
+.circle img {
+  width: 50%;
+}
+
+.circle0 {
+  background-color: white;
+}
+.circle1 {
+  background-color: #EB583E;
 }
 .circle2 {
-  display: grid;
-  width: 95px;
-  height: 90px;
-    background-color: #fc8c04;
-    border-radius: 50%;
-    position: relative;
-    top: 13%;
+    background-color: #F09035;
 }
 .circle3 {
-  display: grid;
-  width: 95px;
-  height: 90px;
-    background-color: #04cc34;
-    border-radius: 50%;
-    position: relative;
-  top: 13%;
+    background-color: #5ECC4F;
 }
 .circle4 {
-  display: grid;
-  width: 95px;
-    height: 90px;
-    background-color: #04bbfb;
-    border-radius: 50%;
-    position: relative;
-  top: 13%;
+    background-color: #52B5F9;
 }
 .circle5 {
-  display: grid;
-  width: 95px;
-    height: 90px;
-    background-color: #7b5bfb;
-    border-radius: 50%;
-    position: relative;
-  top: 13%;
+    background-color: #775DF6;
 }
 .circle6 {
-  display: grid;
-  width: 95px;
-  height: 90px;
-    background-color: #fb63cb;
-    border-radius: 50%;
-    position: relative;
-  top: 13%;
+    background-color: #ED6CCA;
 }
 .wordContainer {
   text-align: center;
+  // position: relative;
+  // top: 75px;
 }
+
+.circleContainer:hover .wordContainer {
+  font-size: larger;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+ 80% { transform: rotate(0deg); }
+ 85% { transform: rotate(10deg); }
+ 95% { transform: rotate(-10deg); }
+100% { transform: rotate(0deg); }
+}
+
+.circleContainer:hover .circle img{
+display: inline-block;
+animation: wiggle 2.5s infinite;
+}
+
+.circle img {
+animation: none;
+}
+
 
 .photoImg {
   position: relative;
