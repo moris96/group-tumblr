@@ -3,7 +3,6 @@ import NewComment from "../NewComment/NewComment"
 import Notes from "../Notes/Notes"
 import styles from "../Post/Post.module.scss"
 import { Link } from "react-router-dom"
-import { set } from "mongoose"
 
 export default function Post({post, user, blog, newPostElement, setNewPostElement}){
     const [showComments, setShowComment] = useState(false)
