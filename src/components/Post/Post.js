@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import NewComment from "../NewComment/NewComment"
 import Notes from "../Notes/Notes"
 import styles from "../Post/Post.module.scss"
-import { Link } from "react-router-dom"
+import Popup from "reactjs-popup"
+import Text from "../PostOptions/Text/Text"
+import Video from "../PostOptions/Video/Video"
 
 export default function Post({post, user, blog, newPostElement, setNewPostElement}){
     const [showComments, setShowComment] = useState(false)
@@ -11,6 +14,18 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
     const displayPostComments = () => {
         setShowComment(!showComments)
     }
+
+    // const updateOptions = [
+    //     {
+    //         type: "text",
+    //         component: <Text />
+    //     },
+    //     {
+    //         type: "video",
+    //         component: <Video />
+    //     }        
+    // ]
+
 
     const findBlog = async () => {
         try {
@@ -21,6 +36,22 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
             console.error(error)
         }
     }
+
+    // const updateBlog = async (updatedData) => {
+
+    //     try {
+    //         await fetch(`/api/post/${post._id}`, {
+    //             method: "PUT",
+    //             header: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify({...updatedData})
+    //         })
+    //         setNewPostElement(newPostElement)
+    //     } catch (error) {
+    //         console.error(error)
+    //     }
+    // }
 
     const deletePost = async () => {
         try {
@@ -42,15 +73,17 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
 
     return(
         <div className={styles.postContainer}>
-            {foundBlog? <Link to={`/${post.blogId}`}>{foundBlog.userName}</Link>:""}
+            {foundBlog? <Link to={`/${post.blogId}`}>
+                <span className={styles.postUserName}>{foundBlog.userName}</span>
+                </Link>:""}
             {/* <h2>{user.username}</h2> */}
-            <h1>{post.title}</h1>
-            <h3>{post.text}</h3>
+            <h1 className={styles.postTitle}>{post.title}</h1>
+            <h3 className={styles.postText}>{post.text}</h3>
             <section className={styles.entryContainer}>
-                {post.imgLink && (post.typeOfPost == 'photo') ? <img src={post.imgLink} height="400" width="400" /> : 
+                {post.imgLink && (post.typeOfPost == 'photo') ? <img src={post.imgLink} height="auto" width="550px" /> : 
                 (post.imgLink &&(post.typeOfPost == 'video'))?
                 
-                <iframe width="420" height="315"src={`https://www.youtube.com/embed/${post.imgLink}`}></iframe>:""}
+                <iframe width="550" height="315"src={`https://www.youtube.com/embed/${post.imgLink}`}></iframe>:""}
                 </section>
                 <section className={styles.socialContainer}>
                     {post.notes ? 
