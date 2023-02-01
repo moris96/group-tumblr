@@ -72,6 +72,7 @@ useEffect(()=>{
 }, [])
 
   return (
+<<<<<<< HEAD
     <div className={styles.postListContainer}>
       <h1 className={styles.postListTitle}>{pageOwner?pageOwner.userName:""}'s Post List</h1>
 
@@ -87,6 +88,16 @@ useEffect(()=>{
       {posts ? posts.map((post) => {
         return <Post key={post._id} post={post} user={user} newPostElement={newPostElement} setNewPostElement={setNewPostElement}/>;
       }): "Nothing here"}
+=======
+    <div className={styles.postList}>
+    <h1>{pageOwner?pageOwner.userName:""}'s Post List</h1>
+    {pageOwner?(blog._id!=pageOwner._id?(
+    blog.following.includes(pageOwner._id)?<h2 onClick={unfollowUser}>Unfollow {pageOwner.username}</h2>:<h2 onClick={followUser}>Follow {pageOwner.username}</h2>):""):""}
+    
+    {posts ? posts.map((post) => {
+      return <Post key={post._id} blog={blog} post={post} user={user} newPostElement={newPostElement} setNewPostElement={setNewPostElement}/>;
+    }): "Nothing here"}
+>>>>>>> 544bdcf474a37c7cb369f1e7744ab0cd9efd83ea
   </div>
   )
 }
