@@ -1,8 +1,13 @@
-import styles from "../SuggestedFollows/SuggestedFollows.module.scss"
 import { useState, useEffect } from 'react'
+import { Link } from "react-router-dom"
+import { useParams } from 'react-router-dom'
+import styles from "../SuggestedFollows/SuggestedFollows.module.scss"
 
 export default function SuggestedFollows () {
   const [blogs, setBlogs] = useState(null)
+  const [linkUsers, setLinkUsers] = useState(null)
+  const foundUser = useParams()
+
   const getBlogs = async () => {
     try {
       const response = await fetch(`/api/blogs`)
@@ -13,10 +18,15 @@ export default function SuggestedFollows () {
     }
   }
 
+
   useEffect(() => {
     getBlogs()
   }, [])
 
+  /*const handleClick = () => {
+
+  }*/
+  
 
   return (
     <section className={styles.suggestedContainer}>
@@ -25,9 +35,9 @@ export default function SuggestedFollows () {
       </h1>
       <hr/>
         {blogs ? blogs.map((blog) => {
-          return <p key={blog.id}>
+          return <h4 key={blog.id}>
             {blog.userName}
-            </p>
+            </h4> 
         }): "No users to show"}
     </section>
   )

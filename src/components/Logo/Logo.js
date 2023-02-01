@@ -21,7 +21,9 @@ export default function Logo () {
 
   return (
     <>
-      <button className={styles.logo}><img src={process.env.PUBLIC_URL+"/iconsImg/logo.png"} alt="logo" className="logo-image" onClick={handleClick} /></button>
+      <button className={styles.logo}><img src={process.env.PUBLIC_URL+"/iconsImg/logo.png"} alt="logo" className="logo-image" onClick={handleClick} />
+      
+      </button>
     </>
   )
 }

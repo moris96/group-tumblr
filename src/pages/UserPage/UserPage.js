@@ -72,14 +72,21 @@ useEffect(()=>{
 }, [])
 
   return (
-    <div className={styles.postList}>
-    <h1>{pageOwner?pageOwner.userName:""}'s Post List</h1>
-    {pageOwner?(blog._id!=pageOwner._id?(
-    blog.following.includes(pageOwner._id)?<h2 onClick={unfollowUser}>Unfollow {pageOwner.username}</h2>:<h2 onClick={followUser}>Follow {pageOwner.username}</h2>):""):""}
-    
-    {posts ? posts.map((post) => {
-      return <Post key={post._id} post={post} user={user} newPostElement={newPostElement} setNewPostElement={setNewPostElement}/>;
-    }): "Nothing here"}
+    <div className={styles.postListContainer}>
+      <h1 className={styles.postListTitle}>{pageOwner?pageOwner.userName:""}'s Post List</h1>
+
+      {pageOwner ? (blog._id!=pageOwner._id ? 
+      (blog.following.includes(pageOwner._id) ? 
+      <h2 className={styles.unfollowBtn} onClick={unfollowUser}>Unfollow {pageOwner.username}</h2>
+      :
+      <h2 className={styles.followBtn} onClick={followUser}>Follow {pageOwner.username}</h2>):
+      "")
+      :
+      ""}
+      
+      {posts ? posts.map((post) => {
+        return <Post key={post._id} post={post} user={user} newPostElement={newPostElement} setNewPostElement={setNewPostElement}/>;
+      }): "Nothing here"}
   </div>
   )
 }

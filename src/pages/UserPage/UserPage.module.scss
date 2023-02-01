@@ -1,7 +1,25 @@
-.postList{
+.postListContainer {
     display: flex;
     flex-direction: column;
-    margin: 0 20px;
-    background-color: black;
+    margin: 50px 20px;
+    background-color: var(--backgound-color);
     color: white;
+}
+
+.postListTitle {
+    justify-content: center;
+}
+
+.unfollowBtn,
+.followBtn {
+    background-color: var(--second-font-color);
+    border: none;
+    border-radius: 20px;
+    width: 70px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
