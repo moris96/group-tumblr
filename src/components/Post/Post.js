@@ -3,6 +3,7 @@ import NewComment from "../NewComment/NewComment"
 import Notes from "../Notes/Notes"
 import styles from "../Post/Post.module.scss"
 import { Link } from "react-router-dom"
+import { set } from "mongoose"
 
 export default function Post({post, user, blog, newPostElement, setNewPostElement}){
     const [showComments, setShowComment] = useState(false)
@@ -21,6 +22,21 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
             console.error(error)
         }
     }
+
+    const deletePost = async () => {
+        try {
+            await fetch(`/api/posts/${post._id}`,{
+                method: "DELETE",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            setNewPostElement(!newPostElement)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     useEffect(()=>{
         findBlog()
     }, [])
@@ -56,9 +72,9 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
             blog={blog}
             newPostElement={newPostElement}
             setNewPostElement={setNewPostElement}/>:""}
-            {blog == post.blogId ? 
+            {blog._id == post.blogId ? 
             <>
-            <button>Delete</button>
+            <button onClick={deletePost}>Delete</button>
             <button>Edit</button> 
             </>: ""}
         </div>
