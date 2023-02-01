@@ -47,7 +47,8 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
             <h1>{post.title}</h1>
             <h3>{post.text}</h3>
             <section className={styles.socialContainer}>
-                {post.imgLink ? <img src={post.imgLink}/> : ""}
+                {post.imgLink ? <img src={post.imgLink} 
+                alt="imagine"/> : ""}
                     <div onClick={()=>setCreateComment(!createComment)}>
                     <img className={styles.commentIcon} src={process.env.PUBLIC_URL+"/iconsImg/comment-icon.png"} alt="comment" />    
                     </div>
