@@ -16,6 +16,12 @@ const postSchema = new Schema ({
   imgLink: {
     type: String
   },
+  likes: {
+    type: String
+  },
+  reBlogs: {
+    type: Number
+  },
   notes: [{type: Schema.Types.ObjectId, ref: 'Note'}]
 },{
     timestamps: true,
