@@ -69,12 +69,12 @@ export default class SignUpForm extends Component {
                 </section>
                 <div className={styles.btnSection}>
                   <button 
-                  type="submit" 
-                  className={styles.signUpBtn}
-                  disabled={disable}
-                  >SIGN UP
-                  &nbsp;
-                  <img src={process.env.PUBLIC_URL+"/iconsImg/right-arrow.png"} alt="right-arrow" className={styles.rightArrow} />
+                    type="submit" 
+                    className={styles.signUpBtn}
+                    disabled={disable}
+                    >SIGN UP
+                    &nbsp;
+                    <img src={process.env.PUBLIC_URL+"/iconsImg/right-arrow.png"} alt="right-arrow" className={styles.rightArrow} />
                   </button>
                 </div>
               </form>

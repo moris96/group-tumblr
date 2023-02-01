@@ -9,7 +9,7 @@
 
 body {
     background-color: var(--background-color);
-    max-width: 1080px;
+    font-family: "Favorit", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
 }
 
 /* Popup */

@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import NewComment from "../NewComment/NewComment"
 import Notes from "../Notes/Notes"
 import styles from "../Post/Post.module.scss"
-import { Link } from "react-router-dom"
+import Popup from "reactjs-popup"
+import Text from "../PostOptions/Text/Text"
+import Video from "../PostOptions/Video/Video"
 
 export default function Post({post, user, blog, newPostElement, setNewPostElement}){
     const [showComments, setShowComment] = useState(false)
@@ -11,6 +14,18 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
     const displayPostComments = () => {
         setShowComment(!showComments)
     }
+
+    // const updateOptions = [
+    //     {
+    //         type: "text",
+    //         component: <Text />
+    //     },
+    //     {
+    //         type: "video",
+    //         component: <Video />
+    //     }        
+    // ]
+
 
     const findBlog = async () => {
         try {
@@ -21,6 +36,22 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
             console.error(error)
         }
     }
+
+    // const updateBlog = async (updatedData) => {
+
+    //     try {
+    //         await fetch(`/api/post/${post._id}`, {
+    //             method: "PUT",
+    //             header: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify({...updatedData})
+    //         })
+    //         setNewPostElement(newPostElement)
+    //     } catch (error) {
+    //         console.error(error)
+    //     }
+    // }
 
     const deletePost = async () => {
         try {
@@ -42,32 +73,40 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
 
     return(
         <div className={styles.postContainer}>
-            {foundBlog? <Link to={`/${post.blogId}`}>{foundBlog.userName}</Link>:""}
+            {foundBlog? <Link to={`/${post.blogId}`}>
+                <span className={styles.postUserName}>{foundBlog.userName}</span>
+                </Link>:""}
             {/* <h2>{user.username}</h2> */}
-            <h1>{post.title}</h1>
-            <h3>{post.text}</h3>
-            <section className={styles.socialContainer}>
-                {post.imgLink && (post.typeOfPost == 'photo') ? <img src={post.imgLink} height="400" width="400" /> : 
+            <h1 className={styles.postTitle}>{post.title}</h1>
+            <h3 className={styles.postText}>{post.text}</h3>
+            <section className={styles.entryContainer}>
+                {post.imgLink && (post.typeOfPost == 'photo') ? <img src={post.imgLink} height="auto" width="550px" /> : 
                 (post.imgLink &&(post.typeOfPost == 'video'))?
                 
-                <iframe width="420" height="315"src={`https://www.youtube.com/embed/${post.imgLink}`}></iframe>:""}
-                    <div onClick={()=>setCreateComment(!createComment)}>
-                    <img className={styles.commentIcon} src={process.env.PUBLIC_URL+"/iconsImg/comment-icon.png"} alt="comment" />    
-                    </div>
-                {createComment? 
-                <NewComment post={post} 
-                createComment={createComment}
-                setCreateComment={setCreateComment}
-                user={user}
-                blog={blog}
-                newPostElement={newPostElement}
-                setNewPostElement={setNewPostElement}/>:""}
-                <div><img className={styles.shareIcon} src={process.env.PUBLIC_URL+"/iconsImg/share-icon.png"} alt="share" /></div>
-                <div><img className={styles.likeIcon} src={process.env.PUBLIC_URL+"/iconsImg/like-icon.png"} alt="like" /></div>
-            </section>
-            {post.notes ? 
-            <h4 onClick={displayPostComments}>{post.notes.length} notes</h4>
-            :""}
+                <iframe width="550" height="315"src={`https://www.youtube.com/embed/${post.imgLink}`}></iframe>:""}
+                </section>
+                <section className={styles.socialContainer}>
+                    {post.notes ? 
+                    <h4 onClick={displayPostComments}
+                    className={styles.notes}>{post.notes.length} notes</h4>
+                    :""}
+                    <section className={styles.socialBtnContainer}>
+                        <div onClick={()=>setCreateComment(!createComment)}>
+                        <img className={styles.commentIcon} src={process.env.PUBLIC_URL+"/iconsImg/comment-icon.png"} alt="comment" />    
+                        </div>
+                        {createComment? 
+                        <NewComment post={post} 
+                        createComment={createComment}
+                        setCreateComment={setCreateComment}
+                        user={user}
+                        blog={blog}
+                        newPostElement={newPostElement}
+                        setNewPostElement={setNewPostElement}/>:""}
+                        <div><img className={styles.reblogIcon} src={process.env.PUBLIC_URL+"/iconsImg/reblog.png"} alt="reblog" /></div>
+                        <div><img className={styles.likeIcon} src={process.env.PUBLIC_URL+"/iconsImg/like-icon.png"} alt="like" /></div>
+                    </section>
+                </section>
+            
             {showComments? 
             <Notes post={post}
             user={user}
@@ -75,10 +114,10 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
             newPostElement={newPostElement}
             setNewPostElement={setNewPostElement}/>:""}
             {blog._id == post.blogId ? 
-            <>
-            <button onClick={deletePost}>Delete</button>
-            <button>Edit</button> 
-            </>: ""}
+            <section className={styles.btnContainer}>
+                <button onClick={deletePost} className={styles.deleteBtn}>Delete</button>
+                <button className={styles.editBtn}>Edit</button> 
+            </section>: ""}
         </div>
     )
 }

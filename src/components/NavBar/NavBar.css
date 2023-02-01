@@ -34,7 +34,7 @@
 
 
 .searchNavBar {
-  padding-top: 4px;
+  padding-top: 7px;
 }
 
 .explore-icon {
@@ -57,6 +57,7 @@
 .post-icon {
   width: 45px;
   height: 35px;
+  border-radius: 5px;
 }
 
 .explore-button {

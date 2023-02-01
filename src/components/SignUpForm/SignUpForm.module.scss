@@ -29,6 +29,8 @@ input {
 }
 
 .signUpBtn {
+  display: flex;
+  align-items: center;
   background-color: white;
   color: black;
   padding: 10px 100px;

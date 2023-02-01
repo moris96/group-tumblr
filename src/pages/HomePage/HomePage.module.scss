@@ -1,12 +1,18 @@
 
 .homePageContainer {
   display: flex;
-  width: 100%;
+  justify-content: center;
+  margin: 0 10%
 }
+
 
 .rightSide {
   display: flex;
   // flex-direction: column;
-  margin: 48px 20px;
-  width:900px;
+  margin: 48px 10px;
+  // width: 600px;
+}
+
+.leftSide {
+  margin-left: 10px;
 }

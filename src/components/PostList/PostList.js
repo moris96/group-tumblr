@@ -20,6 +20,10 @@ export default function PostList({user, blog, newPostElement, setNewPostElement}
 
   return (
     <section className={styles.postListContainer}>
+      {/* <div>
+        <p className={styles.avatar}></p>
+      </div> */}
+      <div className={styles.postListSection}>
       {posts ? posts.map((post) => {
         return <Post 
         key={post._id} 
@@ -29,6 +33,7 @@ export default function PostList({user, blog, newPostElement, setNewPostElement}
         user={user}
         blog={blog} />;
       }): "Nothing here"}
+      </div>
     </section>
   );
 }

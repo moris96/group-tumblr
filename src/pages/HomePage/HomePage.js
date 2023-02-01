@@ -1,6 +1,5 @@
 import Footer from "../../components/Footer/Footer";
 import PostList from "../../components/PostList/PostList";
-import PostOptions from "../../components/PostOptions/PostOptions";
 import SuggestedFollows from "../../components/SuggestedFollows/SuggestedFollows";
 import styles from "../HomePage/HomePage.module.scss"
 
