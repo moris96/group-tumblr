@@ -78,7 +78,7 @@ useEffect(()=>{
     blog.following.includes(pageOwner._id)?<h2 onClick={unfollowUser}>Unfollow {pageOwner.username}</h2>:<h2 onClick={followUser}>Follow {pageOwner.username}</h2>):""):""}
     
     {posts ? posts.map((post) => {
-      return <Post key={post._id} post={post} user={user} newPostElement={newPostElement} setNewPostElement={setNewPostElement}/>;
+      return <Post key={post._id} blog={blog} post={post} user={user} newPostElement={newPostElement} setNewPostElement={setNewPostElement}/>;
     }): "Nothing here"}
   </div>
   )
