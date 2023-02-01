@@ -1,3 +1,4 @@
+
 import styles from "../PostOptions/PostOptions.module.scss"
 import { useState, useRef } from "react"
 import React from "react"
@@ -12,7 +13,7 @@ export default function PostOptions (props) {
 
   return (
     <section className={styles.postOptionsContainer}>
-      <Popup trigger={<p>TEXT</p>} modal>
+      <Popup trigger={<Circle num="0" text="Text"></Circle>} modal>
         {close => (
           <div>
             <Text close1={props.close1}
@@ -27,14 +28,7 @@ export default function PostOptions (props) {
           </div>  
         )}
       </Popup>
-      <Popup trigger={
-        <div className={styles.circle}>
-        <div className={styles.wordContainer}>
-          <img className={styles.photoImg} src={process.env.PUBLIC_URL+"/iconsImg/photos.png"} alt="photos"/>
-          {/* <p className={styles.photos}>PHOTOS</p>&nbsp; */}
-        </div>
-      </div>
-      } modal>
+      <Popup trigger={<Circle num="1" text="Photos"></Circle>} modal>
         {close => (<div>
           <Photo onClick close1={props.close1}
           close={close}
@@ -47,37 +41,30 @@ export default function PostOptions (props) {
           </div>
         )}
       </Popup>
+
+      <Circle num="2" text="QUOTES"></Circle>
+      <Circle num="3" text="LINKS"></Circle>
+      <Circle num="4" text="CHAT"></Circle>
+      <Circle num="5" text="AUDIO"></Circle>
+      <Circle num="6" text="VIDEO"></Circle>
       
-      <div className={styles.circle2}>
-        <div className={styles.wordContainer}>
-        <img className={styles.quoteImg} src={process.env.PUBLIC_URL+"/iconsImg/quote.png"} alt="quote"/>
-          {/* <p className={styles.photos}>QUOTES</p>&nbsp; */}
-        </div>
-      </div>
-      <div className={styles.circle3}>
-        <div className={styles.wordContainer}>
-        <img className={styles.linkImg} src={process.env.PUBLIC_URL+"/iconsImg/link.png"} alt="link"/>
-          {/* <p className={styles.photos}>LINKS</p>&nbsp; */}
-        </div>
-      </div>
-      <div className={styles.circle4}>
-        <div className={styles.wordContainer}>
-        <img className={styles.chatImg} src={process.env.PUBLIC_URL+"/iconsImg/chat.png"} alt="chat"/>
-          {/* <p className={styles.photos}>CHAT</p>&nbsp; */}
-        </div>
-      </div>
-      <div className={styles.circle5}>
-        <div className={styles.wordContainer}>
-        <img className={styles.audioImg} src={process.env.PUBLIC_URL+"/iconsImg/audio.png"} alt="audio"/>
-          {/* <p className={styles.photos}>AUDIO</p>&nbsp; */}
-        </div>
-      </div>
-      <div className={styles.circle6}>
-        <div className={styles.wordContainer}>
-        <img className={styles.videoImg} src={process.env.PUBLIC_URL+"/iconsImg/video.png"} alt="video"/>
-          {/* <p className={styles.photos}>VIDEO</p>&nbsp; */}
-        </div>
-      </div>
+      
+      
     </section>  
   )
+}
+var srcs = ["text", "photos", "quote", "link", "chat", "audio", "video"]
+function Circle(props){
+  return (<>
+  <div className={`${styles.circleContainer}`}>
+    <div className={`${styles.circle} ${styles[`circle${props.num}`]}`}>
+      <img src={process.env.PUBLIC_URL+`/iconsImg/${srcs[props.num]}.png`}></img>
+
+      </div>
+      <div className={styles.wordContainer}>
+          <p className={styles.photos}>{props.text}</p>&nbsp;
+        </div>
+    
+  </div>
+  </>)
 }
