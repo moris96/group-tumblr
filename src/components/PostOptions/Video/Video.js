@@ -16,12 +16,16 @@ const handleChange = (evt) => {
 
 const postNow = async () => {
     let start = 0
+    let finish = 0
     for(let i=0; i<newPost.imgLink.length;i++) {
         if(newPost.imgLink[i]==="?"){
-            start = i+1
+            start = i+3
+        }
+        if(newPost.imgLink[i]==="&"){
+            finish = i
         }
     }
-    newPost.imgLink = newPost.imgLink.substring(start)
+    newPost.imgLink = newPost.imgLink.substring(start, finish)
     try {
         const response = await fetch(`/api/posts`, {
             method: "POST",
