@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function ReBlog({post, blog, setNewPostElement, newPostElement}){
+export default function ReBlog({post, blog, setNewPostElement, newPostElement, close}){
     const [reBloggedPost, setReBloggedPost] =  useState({
         typeOfPost: post.typeOfPost,
         title: post.title,
@@ -19,6 +19,7 @@ export default function ReBlog({post, blog, setNewPostElement, newPostElement}){
                 body: JSON.stringify({...reBloggedPost})
             })
             setNewPostElement(!newPostElement)
+            close()
         } catch (error) {
             console.error(error)
         }
