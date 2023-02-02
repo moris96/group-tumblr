@@ -22,12 +22,7 @@ export default function SuggestedFollows () {
   useEffect(() => {
     getBlogs()
   }, [])
-
-  /*const handleClick = () => {
-
-  }*/
   
-
   return (
     <section className={styles.suggestedContainer}>
       <h1 classsName={styles.suggestedTitle}>

@@ -4,10 +4,6 @@ import React from "react"
 import NewComment from "../NewComment/NewComment"
 import Notes from "../Notes/Notes"
 import styles from "../Post/Post.module.scss"
-import Popup from "reactjs-popup"
-import Text from "../PostOptions/Text/Text"
-import Video from "../PostOptions/Video/Video"
-import Photo from "../PostOptions/Photo/Photo"
 
 export default function Post({post, user, blog, newPostElement, setNewPostElement}){
     const [showComments, setShowComment] = useState(false)
@@ -17,20 +13,6 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
         setShowComment(!showComments)
     }
 
-    const updateOptions = [
-        {
-            type: "text",
-            component: <Text />
-        },
-        {
-            type: "photo",
-            component: <Photo />
-        },
-        {
-            type: "video",
-            component: <Video />
-        }        
-    ]
 
 
     const findBlog = async () => {
@@ -43,37 +25,6 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
         }
     }
 
-    const updateBlog = async (updatedData) => {
-        if (post.typeOfPost == updateOptions[0].type) {
-            <Popup trigger=
-                {close => (
-                    <div>
-                        <Text 
-                        close={close}
-                        user={user}
-                        blog={blog}
-                        newPostElement={newPostElement}
-                        setNewPostElement={setNewPostElement} />
-                        <a className="close" onClick={close}>
-                        &times;
-                        </a>
-                    </div>  
-                )} modal>
-            </Popup>
-        }
-        try {
-            await fetch(`/api/post/${post._id}`, {
-                method: "PUT",
-                header: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({...updatedData})
-            })
-            setNewPostElement(newPostElement)
-        } catch (error) {
-            console.error(error)
-        }
-    }
 
     const deletePost = async () => {
         try {
@@ -98,7 +49,6 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
             {foundBlog? <Link to={`/${post.blogId}`}>
                 <span className={styles.postUserName}>{foundBlog.userName}</span>
                 </Link>:""}
-            {/* <h2>{user.username}</h2> */}
             <h1 className={styles.postTitle}>{post.title}</h1>
             <h3 className={styles.postText}>{post.text}</h3>
             <section className={styles.entryContainer}>
@@ -125,7 +75,7 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
                         newPostElement={newPostElement}
                         setNewPostElement={setNewPostElement}/>:""}
                         <div><img className={styles.reblogIcon} src={process.env.PUBLIC_URL+"/iconsImg/reblog.png"} alt="reblog" /></div>
-                        <div><img className={styles.likeIcon} src={process.env.PUBLIC_URL+"/iconsImg/like-icon.png"} alt="like" /></div>
+                        <div><img className={styles.likeIcon} src={process.env.PUBLIC_URL+ `/iconsImg/like-icon${Math.random()<.5 ? "":"-blue"}.png`} alt="like" /></div>
                     </section>
                 </section>
             
@@ -138,7 +88,7 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
             {blog._id == post.blogId ? 
             <section className={styles.btnContainer}>
                 <button onClick={deletePost} className={styles.deleteBtn}>Delete</button>
-                <button onClick={updateBlog} className={styles.editBtn}>Edit</button> 
+                <button className={styles.editBtn}>Edit</button> 
             </section>: ""}
         </div>
     )

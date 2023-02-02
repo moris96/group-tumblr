@@ -1,4 +1,5 @@
 import { useState } from "react"
+import styles from "./NewComment.module.scss"
 
 export default function NewComment({post, createComment, setCreateComment, user, blog, setNewPostElement, newPostElement}){
     const [newComment, setNewComment] = useState({
@@ -49,10 +50,10 @@ export default function NewComment({post, createComment, setCreateComment, user,
         createdBy: blog._id})
     }
     return(
-        <>
-            <h2>New Comment here</h2>
-            <input type="text" value={newComment.text} name='text' onChange={handleChange}></input>
-            <input type="submit" value="Submit comment" onClick={createComment2}></input>
+        <>  <span className={styles.textContainer}>  
+            <textarea type="text" value={newComment.text} placeholder="New Note" name='text' onChange={handleChange}></textarea>
+            <input type="submit" value="Post" onClick={createComment2}></input>
+            </span>
         </>
     )
 }

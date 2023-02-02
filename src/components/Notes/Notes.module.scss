@@ -1,0 +1,17 @@
+button{
+  margin-left: .5em;
+}
+ul {
+  margin-top: -1em;
+  
+  // list-style-image: url('../../../public//iconsImg/right-arrow.png');
+}
+li {
+margin: 0;
+padding: .25em 0 .25em 1.25em;
+list-style: none;
+background-image: url("../../../public//iconsImg/right-arrow.png");
+background-repeat: no-repeat;
+background-position: left center;
+background-size: 1em;
+}
