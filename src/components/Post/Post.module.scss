@@ -45,6 +45,12 @@ a > .postUserName {
 
 .socialBtnContainer {
   display: flex;
+  align-items: center;
+}
+
+.socialBtnContainer > h4 {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 .commentIcon {

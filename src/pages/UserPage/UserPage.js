@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import Post from "../../components/Post/Post"
@@ -33,11 +31,11 @@ const getUsername = async() => {
 const followUser = async () => {
   const usersFollowed = [...blog.following, pageOwner._id]
   try {
-    const response = await fetch(`/api/blogs/${blog._id}`,{
+    await fetch(`/api/blogs/${blog._id}`,{
       method: "PUT",
       headers:{
         'Content-Type': 'application/json'
-    },
+      },
       body: JSON.stringify({following: usersFollowed})
     })
     setNewPostElement(!newPostElement)
@@ -50,9 +48,8 @@ const unfollowUser = async () => {
   const newFollowing = [...blog.following]
   const index = blog.following.indexOf(pageOwner._id)
   newFollowing.splice(index, 1)
-  console.log(newFollowing)
   try {
-    const response = await fetch(`/api/blogs/${blog._id}`,{
+    await fetch(`/api/blogs/${blog._id}`,{
       method: "PUT",
       headers:{
         'Content-Type': 'application/json'

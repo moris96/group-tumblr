@@ -7,7 +7,9 @@ export default function Video(props){
     title: "",
     imgLink: "",
     blogId: props.blog._id,
-    text: ""
+    text: "",
+    reBlogged: 0,
+    likes: 0
 })
 
 const handleChange = (evt) => {
@@ -38,7 +40,9 @@ const postNow = async () => {
             typeOfPost: "text",
             title: "",
             blogId: props.blog._id,
-            text: ""
+            text: "",
+            reBlogged: 0,
+            likes: 0
         })
         props.setNewPostElement(!props.newPostElement)
         props.close()
