@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Description
+This project is a modern re-imagining of Tumblr.com. It includes a full suite of CRUD (Create, Read, Update, Delete) capabilities, allowing you to easily create, edit, view, and delete posts with ease.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Posting Text Post
+![Tumblr Screenshot](./images/Screenshot%202023-01-31%20at%206.22.24%20PM.png)
 
-## Available Scripts
+# Devs
+* Abel
+* Michael
+* Jerrick
+* Morris
+* Ashley
+* Eddy
 
-In the project directory, you can run:
+# Technolodgies Used
+* MongoDB
+* Express
+* Node.js
+* JavaScript
+* React
 
-### `npm start`
+# ERD and Models
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Login Page
+![Tumblr Screenshot](./images/Screenshot%202023-01-25%20at%207.23.43%20PM.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Sign Up Page
+![Tumblr Screenshot](./images/Screenshot%202023-01-25%20at%207.32.13%20PM.png)
 
-### `npm test`
+## Home Page
+![Tumblr Screenshot](./images/Screenshot%202023-01-31%20at%206.22.03%20PM.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Comparisons
 
-### `npm run build`
+Our version of the website differs from the official version in several notable ways, including page styling, iconography, and feature set. The distinct visual styling of our version sets it apart from the official version, with unique design elements that give it a distinctive look and feel. Additionally, some of the icons used on our site are different from those found in the official version, which further separates our version visually. Finally, there are some features that are missing from our version that are present in the official version, which can affect the user experience. These differences are important to keep in mind when using our version of the website.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Controllers
+```JavaScript
+|- Comments
+|- Posts
+|- Users
+```
+# Routes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Action | URL |  HTTP Verb |
+|----------|----------|----------|
+| Index | /api/posts | GET |
+| Show | /api/posts/[model]/:id | GET |
+| Create | /api/posts/[model]/ | POST |
+| Update | /api/posts/[model]/:id | PUT |
+| Delete | /api/posts/[model]/:id | DELETE |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Things We Could Improve
+*
+*
+*
+*
+*
+*
+# Things We Were Proud of
+*
+*
+*
+*
+*
+*
