@@ -36,8 +36,8 @@ export default function SuggestedFollows () {
       <hr/>
         {blogs ? blogs.slice(0, 5).map((blog) => {
           return <h4 key={blog.id}>
-            {blog.userName}
-            </h4> 
+            <Link to={`/${blog._id}`}>{blog.userName}</Link>
+            </h4>
         }): "No users to show"}
     </section>
   )
