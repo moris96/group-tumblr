@@ -1,6 +1,5 @@
 //Post Options.js
 
-import styles from "../PostOptions/PostOptions.module.scss"
 import { useState, useRef } from "react"
 import React from "react"
 import Popup from "reactjs-popup"
@@ -8,6 +7,7 @@ import 'reactjs-popup/dist/index.css';
 import Text from "./Text/Text";
 import Photo from "./Photo/Photo";
 import Video from "./Video/Video";
+import styles from "../PostOptions/PostOptions.module.scss"
 
 
 
