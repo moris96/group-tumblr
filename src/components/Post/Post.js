@@ -6,6 +6,7 @@ import styles from "../Post/Post.module.scss"
 import Popup from "reactjs-popup"
 import Text from "../PostOptions/Text/Text"
 import Video from "../PostOptions/Video/Video"
+import ReBlog from "../ReBlog/ReBlog"
 
 export default function Post({post, user, blog, newPostElement, setNewPostElement}){
     const [showComments, setShowComment] = useState(false)
@@ -102,7 +103,22 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
                         blog={blog}
                         newPostElement={newPostElement}
                         setNewPostElement={setNewPostElement}/>:""}
-                        <div><img className={styles.reblogIcon} src={process.env.PUBLIC_URL+"/iconsImg/reblog.png"} alt="reblog" /></div>
+                        <Popup modal trigger={<div><img className={styles.reblogIcon} src={process.env.PUBLIC_URL+"/iconsImg/reblog.png"} alt="reblog" /></div>}>
+                        {(close) => (
+                            <>
+                                <ReBlog
+                                post={post}
+                                blog={blog}
+                                newPostElement={newPostElement}
+                                setNewPostElement={setNewPostElement}
+                                close={close}
+                                />
+                                <a className="close" onClick={close}>
+                                &times;
+                                </a>
+                            </>
+                            )}
+                        </Popup>
                         <div><img className={styles.likeIcon} src={process.env.PUBLIC_URL+"/iconsImg/like-icon.png"} alt="like" /></div>
                     </section>
                 </section>
