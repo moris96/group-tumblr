@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import React from "react"
 import NewComment from "../NewComment/NewComment"
 import Notes from "../Notes/Notes"
 import styles from "../Post/Post.module.scss"
@@ -7,6 +8,7 @@ import Popup from "reactjs-popup"
 import Text from "../PostOptions/Text/Text"
 import Video from "../PostOptions/Video/Video"
 import ReBlog from "../ReBlog/ReBlog"
+
 
 export default function Post({post, user, blog, newPostElement, setNewPostElement}){
     const [showComments, setShowComment] = useState(false)
@@ -16,16 +18,6 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
         setShowComment(!showComments)
     }
 
-    // const updateOptions = [
-    //     {
-    //         type: "text",
-    //         component: <Text />
-    //     },
-    //     {
-    //         type: "video",
-    //         component: <Video />
-    //     }        
-    // ]
 
 
     const findBlog = async () => {
@@ -38,21 +30,6 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
         }
     }
 
-    // const updateBlog = async (updatedData) => {
-
-    //     try {
-    //         await fetch(`/api/post/${post._id}`, {
-    //             method: "PUT",
-    //             header: {
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             body: JSON.stringify({...updatedData})
-    //         })
-    //         setNewPostElement(newPostElement)
-    //     } catch (error) {
-    //         console.error(error)
-    //     }
-    // }
 
     const deletePost = async () => {
         try {
@@ -133,7 +110,6 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
             {foundBlog? <Link to={`/${post.blogId}`}>
                 <span className={styles.postUserName}>{foundBlog.userName}</span>
                 </Link>:""}
-            {/* <h2>{user.username}</h2> */}
             <h1 className={styles.postTitle}>{post.title}</h1>
             <h3 className={styles.postText}>{post.text}</h3>
             <section className={styles.entryContainer}>
@@ -159,6 +135,7 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
                         blog={blog}
                         newPostElement={newPostElement}
                         setNewPostElement={setNewPostElement}/>:""}
+
                         <h4>{post.reBlogged}</h4><Popup modal trigger={<div><img className={styles.reblogIcon} src={process.env.PUBLIC_URL+"/iconsImg/reblog.png"} alt="reblog" /></div>}>
                         {(close) => (
                             <>
@@ -176,9 +153,10 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
                             )}
                         </Popup>
                         <h4>{post.likes}</h4><div>{blog?(blog.likedPosts.includes(post._id)?
-                            <img onClick={unlikePost} className={styles.likeIcon} src={process.env.PUBLIC_URL+"/iconsImg/like-icon.png"} alt="like" />:
-                            <img onClick={likePost} className={styles.likeIcon} src={process.env.PUBLIC_URL+"/iconsImg/like-icon.png"} alt="like" />
+                            <img onClick={unlikePost} className={styles.likeIcon} src={process.env.PUBLIC_URL+ `/iconsImg/like-icon${Math.random()<.5 ? "":"-blue"}.png`} alt="like" />:
+                            <img onClick={likePost} className={styles.likeIcon} src={process.env.PUBLIC_URL+ `/iconsImg/like-icon${Math.random()<.5 ? "":"-blue"}.png`} alt="like" />
                             ):""}</div>
+
                     </section>
                 </section>
             

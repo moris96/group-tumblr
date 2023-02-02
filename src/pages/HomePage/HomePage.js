@@ -12,8 +12,6 @@ export default function HomePage({user, newPostElement, setNewPostElement, blog}
 			</div>
 			<div className={styles.leftSide}>
 				<SuggestedFollows />
-			</div>
-			<div>
 				<Footer />
 			</div>
     </section>
