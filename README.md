@@ -27,6 +27,10 @@ This project is a modern re-imagining of Tumblr.com. It includes a full suite of
 
 ---
 
+## Pitchdeck: [pitchdeck](https://docs.google.com/presentation/d/1VP0e2CiRtnKbNwntj1UZyhn789i6hsCRTdlkOMteKUs/edit?usp=sharing)
+
+---
+
 ## Pages: 
 ### Home Page: 
 ![homepage](/public/images/homepage.png)
