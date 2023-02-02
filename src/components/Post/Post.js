@@ -68,6 +68,62 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
         }
     }
 
+    const likePost = async () => {
+        const newLikedPosts = [...blog.likedPosts, post._id]
+        try {
+            const response = await fetch(`/api/blogs/${blog._id}`, {
+                method: "PUT",
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({likedPosts: newLikedPosts})
+            })
+            try {
+                const response =  await fetch(`/api/posts/${post._id}`, {
+                    method: "PUT",
+                    headers:{
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({likes: post.likes+1})
+                })
+            } catch (error) {
+                console.error(error)
+            }
+            setNewPostElement(!newPostElement)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    const unlikePost = async () => {
+        const newLikedPosts = [...blog.likedPosts]
+        const index = blog.likedPosts.indexOf(post._id)
+        newLikedPosts.splice(index, 1)
+        try {
+            const response = await fetch(`/api/blogs/${blog._id}`, {
+                method: "PUT",
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({likedPosts: newLikedPosts})
+            })
+            try {
+                const response =  await fetch(`/api/posts/${post._id}`, {
+                    method: "PUT",
+                    headers:{
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({likes: post.likes-1})
+                })
+            } catch (error) {
+                console.error(error)
+            }
+            setNewPostElement(!newPostElement)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     useEffect(()=>{
         findBlog()
     }, [])
@@ -103,7 +159,7 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
                         blog={blog}
                         newPostElement={newPostElement}
                         setNewPostElement={setNewPostElement}/>:""}
-                        <Popup modal trigger={<div><img className={styles.reblogIcon} src={process.env.PUBLIC_URL+"/iconsImg/reblog.png"} alt="reblog" /></div>}>
+                        <h4>{post.reBlogged}</h4><Popup modal trigger={<div><img className={styles.reblogIcon} src={process.env.PUBLIC_URL+"/iconsImg/reblog.png"} alt="reblog" /></div>}>
                         {(close) => (
                             <>
                                 <ReBlog
@@ -119,7 +175,10 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
                             </>
                             )}
                         </Popup>
-                        <div><img className={styles.likeIcon} src={process.env.PUBLIC_URL+"/iconsImg/like-icon.png"} alt="like" /></div>
+                        <h4>{post.likes}</h4><div>{blog?(blog.likedPosts.includes(post._id)?
+                            <img onClick={unlikePost} className={styles.likeIcon} src={process.env.PUBLIC_URL+"/iconsImg/like-icon.png"} alt="like" />:
+                            <img onClick={likePost} className={styles.likeIcon} src={process.env.PUBLIC_URL+"/iconsImg/like-icon.png"} alt="like" />
+                            ):""}</div>
                     </section>
                 </section>
             
@@ -129,11 +188,11 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
             blog={blog}
             newPostElement={newPostElement}
             setNewPostElement={setNewPostElement}/>:""}
-            {blog._id == post.blogId ? 
+            {blog ? (blog._id == post.blogId ? 
             <section className={styles.btnContainer}>
                 <button onClick={deletePost} className={styles.deleteBtn}>Delete</button>
-                <button className={styles.editBtn}>Edit</button> 
-            </section>: ""}
+                <button className={styles.editBtn}>Edit</button>
+            </section>: ""):""}
         </div>
     )
 }
