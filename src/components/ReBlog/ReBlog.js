@@ -6,7 +6,9 @@ export default function ReBlog({post, blog, setNewPostElement, newPostElement, c
         title: post.title,
         imgLink: post.imgLink,
         blogId: blog._id,
-        text: post.text
+        text: post.text,
+        reBlogged: 0,
+        likes: 0
     })
 
     const reblog = async () => {
@@ -18,6 +20,17 @@ export default function ReBlog({post, blog, setNewPostElement, newPostElement, c
                 },
                 body: JSON.stringify({...reBloggedPost})
             })
+            try {
+                await fetch(`/api/posts/${post._id}`,{
+                    method: "PUT",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({reBlogged: post.reBlogged+1})  
+                })
+            } catch (error) {
+                console.error(error)
+            }
             setNewPostElement(!newPostElement)
             close()
         } catch (error) {
