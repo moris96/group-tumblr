@@ -219,10 +219,6 @@ const [blogs, setBlogs] = useState(null)
     getBlogs()
   }, [])
 
-  /*const handleClick = () => {
-
-  }*/
-  
 
   return (
     <section className={styles.suggestedContainer}>
