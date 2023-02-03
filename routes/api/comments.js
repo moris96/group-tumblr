@@ -3,15 +3,15 @@ const router = express.Router()
 const { dataController, apiController } = require('../../controllers/api/comments')
 
 //add routes
-// Index /api/posts
+// Index /api/comments
 router.get('/', dataController.index, apiController.index)
-//Delete /api/posts/:id
+//Delete /api/comments/:id
 router.delete('/:id', dataController.destroy, apiController.show)
-//Update /api/posts/:id
+//Update /api/comments/:id
 router.put('/:id', dataController.update, apiController.show)
-//Create /api/posts
+//Create /api/comments
 router.post('/', dataController.create, apiController.show)
-//Show /api/posts/:id
+//Show /api/comments/:id
 router.get('/:id', dataController.show, apiController.show)
 
 
