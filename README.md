@@ -22,10 +22,31 @@ This project is a modern re-imagining of Tumblr.com. It includes a full suite of
 
 ---
 
-## ERD (entity relationship diagram): 
-![erd](/public/images/erd.png)
+## NPM Packages 
+
+* bcrypt 
+* dotenv
+* express 
+* jsonwebtoken
+* mongoose
+* morgan
+* nodemon
+* react
+* react-dom
+* react-router-dom
+* react-scripts
+* reactjs-popup
+* sass 
+* serve-favicon
+* uploader 
 
 ---
+
+## Comparisons:
+### One of the main questions of the project is the design choices we, as the group, have made. The simple answer to most of the design choices is quite simple ... Tumblr had it and our version of the app reflects that. From the very beginning, we saw Tumblr as a end product we wanted to get to. From the visual styling, icons and animations, we tried to emulate the site as much as possible that makes sense from a User perspective and either redesign or remove what didn't. Finally, there are some features that are missing from our version that are present in the official version, which can affect the user experience. These differences are important to keep in mind when using our version of the website.
+
+---
+
 
 ## Pitchdeck: [pitchdeck](https://docs.google.com/presentation/d/1VP0e2CiRtnKbNwntj1UZyhn789i6hsCRTdlkOMteKUs/edit?usp=sharing)
 
@@ -241,6 +262,13 @@ const [blogs, setBlogs] = useState(null)
 #### What this code does is display all the users who have made a post as "follow suggestions" for other users to follow 
 ![suggestedfollows](/public/images/suggestedfollows.png)
 
+---
+
+## ERD (entity relationship diagram): 
+![erd](/public/images/erd.png)
+
+---
+
 ## Models:
 ### blog: This is the schematic for the main blog model. The blog model itself is the post that is shown on the homepage. 
 ```JavaScript
@@ -376,31 +404,63 @@ module.exports = model('User', userSchema)
 
 ---
 
-## Comparisons:
-### Our version of the website differs from the official version in several notable ways, including page styling, iconography, and feature set. The distinct visual styling of our version sets it apart from the official version, with unique design elements that give it a distinctive look and feel. Additionally, some of the icons used on our site are different from those found in the official version, which further separates our version visually. Finally, there are some features that are missing from our version that are present in the official version, which can affect the user experience. These differences are important to keep in mind when using our version of the website.
-
----
-
 ## Routes: 
 
+POSTS: 
 | Action | URL |  HTTP Verb |
 |----------|----------|----------|
 | Index | /api/posts | GET |
-| Show | /api/posts/[model]/:id | GET |
-| Create | /api/posts/[model]/ | POST |
-| Update | /api/posts/[model]/:id | PUT |
-| Delete | /api/posts/[model]/:id | DELETE |
+| Show | /api/posts/:id | GET |
+| Create | /api/posts/ | POST |
+| Update | /api/posts/:id | PUT |
+| Delete | /api/posts/:id | DELETE |
+
+BLOGS: 
+| Action | URL |  HTTP Verb |
+|----------|----------|----------|
+| Index | /api/blogs | GET |
+| Show | /api/blogs/:id | GET |
+| Create | /api/blogs/ | POST |
+| Update | /api/blogs/:id | PUT |
+| Delete | /api/blogs/:id | DELETE |
+
+COMMENTS: 
+| Action | URL |  HTTP Verb |
+|----------|----------|----------|
+| Index | /api/comments | GET |
+| Show | /api/comments/:id | GET |
+| Create | /api/comments/ | POST |
+| Update | /api/comments/:id | PUT |
+| Delete | /api/comments/:id | DELETE |
+
+USERS:
+| Action | URL |  HTTP Verb |
+|----------|----------|----------|
+| Index | /api/users | POST |
+| Show | /api/users/login| POST |
+| Create | /api/users/check-token | GET |
 
 --- 
 
+## Ice box
+
+* Avatar/Profile Picture Component
+* More post options
+* Messaging feature
+* Search feature
+* More User customizations
+* "Sign in with Google/Apple" feature
+
+---
+# SPRINT RETROSPECTIVES  
+
 ## Key Learnings / Takeaways: 
-* Going in depth on the fullstack of a social media app. We had to install different packages such as popup 
+* Going in depth on the fullstack of a social media app By using React.js to create a single page social media app with full CRUD functionality and RESTful routes working. We had to install different packages such as popup 
 * Learning how to effieciently make pull requests on GitHub without breaking the code 
-* Using React.js to create a single page social media app with full CRUD functionality and RESTful routes working 
 * Working efficiently with new people on a new team to meet deliverables and deadlines 
 
 --- 
 
 ## Things we could improve on: 
-* Team coordination. For most of the cohort we worked on individual projects, so assigning tasks to group members and making sure they're getting it completed was new for us since we never worked with each other on the same team 
+* Team communication and coordination. For most of the cohort we worked on individual projects, so assigning tasks to group members and making sure they're getting it completed was new for us since we never worked with each other on the same team 
 * Pull requests on GitHub 
