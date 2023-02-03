@@ -1,0 +1,26 @@
+.logInFormContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.logInBtn {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: black;
+  padding: 10px 100px;
+  border-radius: 20px;
+  border: none
+}
+
+.rightArrow {
+  max-width: 20px;
+  max-height: 20px;
+}

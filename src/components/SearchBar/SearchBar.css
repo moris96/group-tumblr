@@ -1,0 +1,11 @@
+.search-bar {
+  background-color: #758494;
+  color: ghostwhite;
+  position: relative;
+  /* top: 5%;
+  left: 9%; */
+  height: 30px;
+  width: 300px;
+  border-radius: .5rem;
+  border: none
+}

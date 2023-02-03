@@ -1,0 +1,114 @@
+.postOptionsContainer {
+  display: flex;
+  vertical-align: baseline;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+
+div:has( > .postOptionsContainer) {
+  // this should be moved to styles . css probably
+  background-color: transparent;
+  width: 90%;
+}
+
+.photos {
+  color: white;
+  font-weight: bold;
+}
+
+.circle {
+  // display: inline-block;
+  margin: 0em .5em;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.circleContainer:hover .circle {
+  width: 100px;
+  height: 100px;
+}
+
+.circle img {
+  width: 50%;
+}
+
+.circle0 {
+  background-color: white;
+}
+.circle1 {
+  background-color: #EB583E;
+}
+.circle2 {
+    background-color: #F09035;
+}
+.circle3 {
+    background-color: #5ECC4F;
+}
+.circle4 {
+    background-color: #52B5F9;
+}
+.circle5 {
+    background-color: #775DF6;
+}
+.circle6 {
+    background-color: #ED6CCA;
+}
+.wordContainer {
+  text-align: center;
+  // position: relative;
+  // top: 75px;
+}
+
+.circleContainer:hover .wordContainer {
+  font-size: larger;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+ 80% { transform: rotate(0deg); }
+ 85% { transform: rotate(10deg); }
+ 95% { transform: rotate(-10deg); }
+100% { transform: rotate(0deg); }
+}
+
+.circleContainer:hover .circle img{
+display: inline-block;
+animation: wiggle 2.5s infinite;
+}
+
+.circle img {
+animation: none;
+}
+
+
+.photoImg {
+  position: relative;
+  top: 20%;
+}
+.quoteImg {
+  position: relative;
+  top: 20%;
+}
+.linkImg {
+  position: relative;
+  top: 20%;
+}
+.chatImg {
+  position: relative;
+  top: 20%;
+}
+.audioImg {
+  position: relative;
+  top: 20%;
+}
+.videoImg {
+  position: relative;
+  top: 20%;
+}

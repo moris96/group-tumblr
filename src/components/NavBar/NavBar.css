@@ -1,0 +1,109 @@
+/* navbar */
+.navBarContainer {
+  display: grid;
+  grid-template-rows: 1fr;
+  border-bottom: 1px solid var(--breakline-color);
+  padding-top: 5px;
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--breakline-color);
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 1;
+}
+
+
+.nav-button{
+  cursor: pointer;
+}
+
+.nav-bar-left{
+  display: flex;
+  flex-wrap: nowrap;
+  grid-row: 1/2;
+}
+
+.nav-bar-right{
+  display: flex;
+  justify-content: end;
+  margin: 3px 50px 0 0;
+  grid-row: 1/2;
+  max-height: 45px;
+}
+
+
+
+.searchNavBar {
+  padding-top: 7px;
+}
+
+.explore-icon {
+  width: 50px;
+  height: 40px;
+}
+.mail-icon {
+  width: 50px;
+  height: 40px;
+}
+.chat-icon {
+  width: 50px;
+  height: 40px;
+}
+.account-icon {
+  width: 50px;
+  height: 40px;
+  margin: -2px 0 0 -8px;
+}
+.post-icon {
+  width: 45px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+.explore-button {
+  border: none;
+  position: relative;
+  /* left: 46%; */
+  width: 45px;
+  height: 35px;
+  background-color: #041c34;
+}
+.mail-button {
+  border: none;
+  position: relative;
+  /* left: 47%; */
+  width: 45px;
+  height: 35px;
+  background-color: #041c34;
+}
+.chat-button {
+  border: none;
+  position: relative;
+  /* left: 48%; */
+  width: 45px;
+  height: 35px;
+  background-color: #041c34;
+}
+.account-button {
+  /* border-radius: 2rem; */
+  border: none;
+  position: relative;
+  width: 45px;
+  height: 35px;
+  background-color: #041c34;
+}
+.post-button {
+  /* border-radius: 2rem; */
+  border: none;
+  position: relative;
+  width: 45px;
+  background-color: #041c34;
+}
+
+
+.search-submit {
+  position: relative;
+  top: 30%;
+  left: 5%;
+}

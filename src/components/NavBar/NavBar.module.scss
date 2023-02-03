@@ -1,0 +1,20 @@
+
+.navBarContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  background-color: black;
+  color: white;
+  width:max-content;
+
+}
+
+.nav-button{
+  cursor: pointer;
+}
+
+.nav-bar-right {
+  display: flex;
+  flex-wrap: nowrap;
+
+}

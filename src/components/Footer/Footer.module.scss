@@ -1,0 +1,20 @@
+.footerContainer {
+  display: flex;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:2.25em;
+  width:100%;
+  background:transparent;
+  margin-left: 75%;
+}
+
+
+a {
+  margin: .5em;
+  padding-bottom: .5em;
+  font-size: 1em;
+  color: var(--second-font-color);
+  text-decoration: none;
+}
+

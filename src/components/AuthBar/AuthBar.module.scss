@@ -1,0 +1,60 @@
+.authBarContainer {
+  display: grid;
+  grid-template-rows: 1fr;
+  border-bottom: 1px solid var(--breakline-color);
+  padding-top: 5px;
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+.authLeftSide {
+  display: flex;
+  flex-wrap: nowrap;
+  grid-row: 1/2;
+}
+
+.searchBarAuth {
+  margin: 3px 0 2px 0;
+}
+
+.authBtns {
+  display: flex;
+  justify-content: end;
+  margin: 3px 20px 0 0;
+  grid-row: 1/2;
+  max-height: 45px;
+}
+
+.logIn {
+  margin: 0 18px 7px 0;
+  background-color: #00cf34;
+  color: black;
+  padding: 6px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  line-height: 1.5;
+  font-weight: 700;
+  max-height: 45px;
+  border: none
+}
+
+.logIn-content {
+  background-color:#00cf34;
+}
+
+.signUp {
+  margin: 0 18px 7px 0;
+  background-color: #00b8ff;
+  color: black;
+  padding: 6px 15px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  line-height: 1.5;
+  font-weight: 700;
+  max-height: 45px;
+  border: none
+}

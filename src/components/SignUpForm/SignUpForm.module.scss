@@ -1,0 +1,44 @@
+
+.signUpFormContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.signUpSection{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+label {
+  grid-column: 1/2;
+}
+
+input {
+  grid-column: 2/3;
+}
+
+.btnSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.required {
+  color: red;
+}
+
+.signUpBtn {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: black;
+  padding: 10px 100px;
+  border-radius: 20px;
+  border: none
+}
+
+.rightArrow {
+  max-width: 20px;
+  max-height: 20px;
+}
