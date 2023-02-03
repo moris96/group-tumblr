@@ -1,4 +1,7 @@
 # Product Description: 
+
+### You were probably looking for Tumblr and you tumblE onto here. 
+
 This project is a modern re-imagining of Tumblr.com. It includes a full suite of CRUD (Create, Read, Update, Delete) capabilities, allowing you to easily create, edit, view, and delete posts with ease.
 
 ## Developers: 
@@ -47,6 +50,7 @@ This project is a modern re-imagining of Tumblr.com. It includes a full suite of
 
 ---
 
+## Trello: [trello](https://trello.com/b/mQXEPJhx/tumble)
 
 ## Pitchdeck: [pitchdeck](https://docs.google.com/presentation/d/1VP0e2CiRtnKbNwntj1UZyhn789i6hsCRTdlkOMteKUs/edit?usp=sharing)
 
