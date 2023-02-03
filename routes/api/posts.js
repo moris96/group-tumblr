@@ -5,6 +5,8 @@ const { dataController, apiController } = require('../../controllers/api/posts')
 //add routes
 // Index /api/posts
 router.get('/', dataController.index, apiController.index)
+//Index route for all users you follow
+router.get('/blog/:id', dataController.blogIndex, apiController.index)
 // Index of posts for each user
 router.get('/user/:id', dataController.userIndex, apiController.index)
 //Delete /api/posts/:id

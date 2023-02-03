@@ -1,4 +1,5 @@
 const Post = require('../../models/post')
+const Blog = require('../../models/blog')
 
 const dataController = {
   // Index,
@@ -16,6 +17,29 @@ const dataController = {
         foundPosts.sort((a, b) => b.createdAt - a.createdAt)
         res.locals.data.posts = foundPosts
         next()
+      }
+    })
+  },
+  blogIndex(req, res, next){
+    const followed = []
+    Blog.find({_id: req.params.id}, (err, foundBlog) =>{
+      if(err){
+        res.status(400).send({
+          msg: err.message
+        })
+      } else {
+        followed.push(...foundBlog[0].following, foundBlog[0]._id.toString())
+        Post.find({blogId: {$in: followed}}).populate('notes').exec((err, foundPosts) => {
+          if(err){
+            res.status(400).send({
+              msg: err.message
+            })
+          } else {
+            foundPosts.sort((a, b) => b.createdAt - a.createdAt)
+            res.locals.data.posts = foundPosts
+            next()
+          }
+        })
       }
     })
   },

@@ -153,8 +153,8 @@ export default function Post({post, user, blog, newPostElement, setNewPostElemen
                             )}
                         </Popup>
                         <h4>{post.likes}</h4><div>{blog?(blog.likedPosts.includes(post._id)?
-                            <img onClick={unlikePost} className={styles.likeIcon} src={process.env.PUBLIC_URL+ `/iconsImg/like-icon${Math.random()<.5 ? "":"-blue"}.png`} alt="like" />:
-                            <img onClick={likePost} className={styles.likeIcon} src={process.env.PUBLIC_URL+ `/iconsImg/like-icon${Math.random()<.5 ? "":"-blue"}.png`} alt="like" />
+                            <img onClick={unlikePost} className={styles.likeIcon} src={process.env.PUBLIC_URL+ `/iconsImg/like-icon-blue.png`} alt="like" />:
+                            <img onClick={likePost} className={styles.likeIcon} src={process.env.PUBLIC_URL+ `/iconsImg/like-icon.png`} alt="like" />
                             ):""}</div>
 
                     </section>

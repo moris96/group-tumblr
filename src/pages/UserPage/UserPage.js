@@ -10,7 +10,7 @@ const foundUser = useParams()
 
 const getPosts = async () => {
   try {
-    const response = await fetch(`/api/posts/user/${foundUser.id}`)
+    const response = await fetch(`/api/posts/blog/${foundUser.id}`)
     const data = await response.json()
     setPosts(data)
   } catch (error) {
